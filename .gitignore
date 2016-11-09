@@ -1,0 +1,31 @@
+# =============== #
+# Unity generated #
+# =============== #
+Stadium3D/Temp/
+Stadium3D/Library/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+Stadium3D/ExportedObj/
+Stadium3D/obj/
+Stadium3D/*.svd
+Stadium3D/*.userprefs
+Stadium3D//*.csproj
+Stadium3D/*.pidb
+Stadium3D/*.suo
+/*.sln
+Stadium3D/*.user
+Stadium3D/*.unityproj
+Stadium3D/*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+Stadium3D/.DS_Store
+Stadium3D/.DS_Store?
+Stadium3D/._*
+Stadium3D/.Spotlight-V100
+Stadium3D/.Trashes
+Stadium3D/ehthumbs.db
+Stadium3D/Thumbs.db
