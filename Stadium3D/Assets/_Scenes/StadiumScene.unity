@@ -231,6 +231,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f7d72086f912145b53181affd1e9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  perspectiveZoomSpeed: 0.5
+  orthoZoomSpeed: 0.5
+  rotateSpeed: 500
+  stadium: {fileID: 1705124901}
 --- !u!1 &1035182915
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,3 +298,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &1705124901 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100026, guid: 4ca9f49e7ac66d34f8d562eeb1caaa5f, type: 3}
+  m_PrefabInternal: {fileID: 432470593}
