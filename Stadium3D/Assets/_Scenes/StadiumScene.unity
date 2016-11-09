@@ -233,7 +233,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   perspectiveZoomSpeed: 0.5
   orthoZoomSpeed: 0.5
-  rotateSpeed: 500
+  rotateSpeed: 0.1
+  minZoomLevel: 15
+  maxZoomLevel: 80
+  touchRotateMultiplier: 1
   stadium: {fileID: 1705124901}
 --- !u!1 &1035182915
 GameObject:
