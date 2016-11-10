@@ -2,6 +2,8 @@
 
 public class CameraMovement : MonoBehaviour
 {
+    public bool rotating = true;
+    public bool rotatingToStart = false;
     public float perspectiveZoomSpeed = 0.5f;
     public float orthoZoomSpeed = 0.5f;
     public float rotateSpeed = 10f;
@@ -21,11 +23,11 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount < 2)
+        if (Input.touchCount < 2 && rotating)
         {
             float rotateMultiplier = 1f;
 
-            if (Input.touchCount == 1)
+            if (Input.touchCount == 1 && !rotatingToStart)
             {
                 var touchZero = Input.GetTouch(0);
 
@@ -33,8 +35,15 @@ public class CameraMovement : MonoBehaviour
 
                 rotateMultiplier = touchZero.deltaPosition.x * touchRotateMultiplier;
             }
+            else if (rotatingToStart)
+                rotateMultiplier *= 20f;
 
             transform.RotateAround(point, new Vector3(0.0f, 1.0f, 0.0f), 20 * Time.deltaTime * rotateSpeed * rotateMultiplier);
+
+            if (rotatingToStart && (transform.position.x > 100 && transform.position.x < 160) && (transform.position.z > 9500 && transform.position.z < 9600))
+            {
+                rotating = false;
+            }
         }
         else if (Input.touchCount == 2)
         {
