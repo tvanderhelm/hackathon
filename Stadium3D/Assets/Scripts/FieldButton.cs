@@ -25,6 +25,8 @@ public class FieldButton : MonoBehaviour
         var camera = Camera.main;
         var cameraScript = camera.gameObject.GetComponent<CameraMovement>();
 
-        cameraScript.rotatingToStart = true;
+       cameraScript.rotatingToStart = true;
+
+       
     }
 }

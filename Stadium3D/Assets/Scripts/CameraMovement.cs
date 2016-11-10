@@ -20,6 +20,7 @@ public class CameraMovement : MonoBehaviour
 
     public GameObject stadium;
     public Camera cameraComponent;
+    private Animator fieldAnimation;
 
     private void Start()
     {
@@ -57,7 +58,7 @@ public class CameraMovement : MonoBehaviour
             var rotateMultiplier = 1f;
             if (Input.touchCount < 2 && rotating)
             {
-                var multip = 1;
+                var invert = 1;
 
                 if (Input.touchCount == 1 && !rotatingToStart)
                 {
@@ -70,7 +71,7 @@ public class CameraMovement : MonoBehaviour
                     rotateMultiplier *= rotatingToStartMultiplier;
                     if (transform.rotation.x < 0)
                     {
-                        multip *= -1;
+                        invert *= -1;
                     }
                 }
                 if (rotatingToStart && (transform.rotation.y > 0.98 || transform.rotation.y < -0.98))
@@ -82,7 +83,7 @@ public class CameraMovement : MonoBehaviour
                 {
                     Debug.Log(rotateMultiplier);
 
-                    transform.RotateAround(point, new Vector3(0.0f, multip * 1.0f, 0.0f), 20f * Time.deltaTime * rotateSpeed * rotateMultiplier);
+                    transform.RotateAround(point, new Vector3(0.0f, invert * 1.0f, 0.0f), 20f * Time.deltaTime * rotateSpeed * rotateMultiplier);
                 }
             }
             else if (Input.touchCount == 2)
