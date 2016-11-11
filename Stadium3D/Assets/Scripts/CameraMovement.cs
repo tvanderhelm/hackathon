@@ -3,7 +3,7 @@
 public class CameraMovement : MonoBehaviour
 {
     public bool rotating = true;
-    public bool rotatingToStart = false;
+    public bool rotatingToStart;
     public float perspectiveZoomSpeed = 0.5f;
     public float orthoZoomSpeed = 0.5f;
     public float rotateSpeed = 10f;
@@ -13,8 +13,11 @@ public class CameraMovement : MonoBehaviour
     public float zoomToFieldMultiplier = 8f;
     public float zoomToFieldOfView = -0.5f;
     public float rotatingToStartMultiplier = 20f;
+    public float turningRate = 30f;
 
     public bool zoomtoField;
+    public bool zoomFromField;
+    private bool zoomed;
 
     private Vector3 point;
 
@@ -28,6 +31,9 @@ public class CameraMovement : MonoBehaviour
     private float journeyLength;
     private bool firstLerpStarted;
     private bool secondLerpStarted;
+    private bool thirdLerpStarted;
+
+    private readonly Quaternion rotatingTarget = new Quaternion(0f, 0.98f, -0.2f, 0f);
 
     private void Start()
     {
@@ -38,6 +44,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("X: " + transform.rotation.x.ToString("F9") + " Y: " + transform.rotation.y.ToString("F9") + " Z: " + transform.rotation.z.ToString("F9") + " W: " + transform.rotation.w.ToString("F9"));
         if (firstLerpStarted)
         {
             if (Lerp())
@@ -55,10 +62,30 @@ public class CameraMovement : MonoBehaviour
                 secondLerpStarted = false;
                 zoomtoField = true;
             }
+            else
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotatingTarget, turningRate * Time.deltaTime);
+            }
+        }
+        else if (thirdLerpStarted)
+        {
+            if (this.Lerp())
+            {
+                thirdLerpStarted = false;
+                rotating = true;
+            }
         }
         else if (zoomtoField)
         {
             ZoomToField();
+        }
+        else if (zoomFromField)
+        {
+            ZoomFromField();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            zoomFromField = true;
         }
         else
         {
@@ -74,11 +101,11 @@ public class CameraMovement : MonoBehaviour
     {
         var distCovered = (Time.time - startTime) * lerpSpeed;
         var fracJourney = distCovered / journeyLength;
-        transform.position = Vector3.Lerp(transform.position, lerpTarget, fracJourney);
+        transform.position = Vector3.Slerp(transform.position, lerpTarget, fracJourney);
 
         return lerpTarget.x - 1.0f <= transform.position.x && lerpTarget.x + 1.0f >= transform.position.x && lerpTarget.y - 1.0f <= transform.position.y && lerpTarget.y + 1.0f >= transform.position.y && lerpTarget.z - 1.0f <= transform.position.z && lerpTarget.z + 1.0f >= transform.position.z;
     }
-
+    
     /// <summary>
     /// Zoom to the field automatically.
     /// </summary>
@@ -101,6 +128,39 @@ public class CameraMovement : MonoBehaviour
         else if (transform.position.y > 11000)
         {
             zoomtoField = false;
+            zoomed = true;
+            //transform.rotation = Quaternion.Euler(66, 184, 4);
+        }
+    }
+
+    /// <summary>
+    /// Zoom from the field to the starting position automatically.
+    /// </summary>
+    private void ZoomFromField()
+    {
+        transform.RotateAround(point, new Vector3(1.0f, 0.0f, 0.0f), 20 * Time.deltaTime * rotateSpeed * zoomToFieldMultiplier);
+        if (transform.position.y > 8000 && transform.position.y < 11000)
+        {
+            if (cameraComponent.orthographic)
+            {
+                cameraComponent.orthographicSize -= zoomToFieldOfView * orthoZoomSpeed;
+                cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minZoomLevel);
+            }
+            else
+            {
+                cameraComponent.fieldOfView -= zoomToFieldOfView * perspectiveZoomSpeed;
+                cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minZoomLevel, maxZoomLevel);
+            }
+        }
+        else if (transform.position.y < 5955)
+        {
+            zoomFromField = false;
+            zoomed = false;
+
+            startTime = Time.time;
+            lerpTarget = new Vector3(0, 3954, 9665);
+
+            thirdLerpStarted = true;
         }
     }
 
@@ -144,6 +204,7 @@ public class CameraMovement : MonoBehaviour
         if (rotatingToStart && (transform.rotation.y > 0.981 || transform.rotation.y < -0.981))
         {
             rotating = false;
+            rotatingToStart = false;
 
             lerpTarget = new Vector3(0, transform.position.y, 9665);
             startTime = Time.time;

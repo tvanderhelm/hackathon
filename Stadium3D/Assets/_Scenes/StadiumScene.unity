@@ -402,9 +402,10 @@ MonoBehaviour:
   zoomToFieldOfView: -1
   rotatingToStartMultiplier: 20
   zoomtoField: 0
+  zoomFromField: 0
   stadium: {fileID: 1705124901}
   cameraComponent: {fileID: 0}
-  lerpSpeed: 1500
+  lerpSpeed: 500
 --- !u!1001 &547082933
 Prefab:
   m_ObjectHideFlags: 0
