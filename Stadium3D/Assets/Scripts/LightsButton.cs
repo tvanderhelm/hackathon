@@ -11,7 +11,7 @@ public class LightsButton : MonoBehaviour
 
     private void Start()
     {
-        if (DateTime.Now.Hour > 14 || DateTime.Now.Hour < 7)
+        if (DateTime.Now.Hour > 18 || DateTime.Now.Hour < 7)
         {
             Sun.enabled = false;
             UpperRightLight.enabled = true;
