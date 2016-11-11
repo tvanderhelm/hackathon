@@ -44,7 +44,6 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("X: " + transform.rotation.x.ToString("F9") + " Y: " + transform.rotation.y.ToString("F9") + " Z: " + transform.rotation.z.ToString("F9") + " W: " + transform.rotation.w.ToString("F9"));
         if (firstLerpStarted)
         {
             if (Lerp())
@@ -201,7 +200,7 @@ public class CameraMovement : MonoBehaviour
                 invert *= -1;
             }
         }
-        if (rotatingToStart && (transform.rotation.y > 0.981 || transform.rotation.y < -0.981))
+        if (rotatingToStart && (transform.rotation.y > 0.977 || transform.rotation.y < -0.977))
         {
             rotating = false;
             rotatingToStart = false;
