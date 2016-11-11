@@ -407,6 +407,7 @@ MonoBehaviour:
   shouldInvert: 0
   zoomToField: 0
   zoomFromField: 0
+  fieldButton: {fileID: 1997033430}
   stadium: {fileID: 1705124901}
   cameraComponent: {fileID: 0}
   fieldAnimation: {fileID: 547082936}
@@ -501,6 +502,8 @@ MonoBehaviour:
   textures:
   - {fileID: 2800000, guid: 1bcab33568dcc4141a17a3f26ff76de2, type: 3}
   - {fileID: 2800000, guid: a7ea58a5c63d62a4d97560ae7155f0fb, type: 3}
+  - {fileID: 2800000, guid: 9d2233e716ed0a74eaf4b94ca55b4e7b, type: 3}
+  - {fileID: 2800000, guid: 7739734579dd4ff44b0809638b252017, type: 3}
   currentTexture: 0
   renderer: {fileID: 0}
 --- !u!1 &561516625
@@ -713,7 +716,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &1987471444
 RectTransform:
@@ -906,3 +909,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc1b3ca70ae46d45ac41c792d662b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textureChanger: {fileID: 547082940}

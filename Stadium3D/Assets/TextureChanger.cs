@@ -5,19 +5,34 @@ public class TextureChanger : MonoBehaviour {
     public Texture[] textures;
     public int currentTexture;
     public Renderer renderer;
+    const float delay = 0.15f;
 
 	// Use this for initialization
 	void Start () {
         renderer = GetComponent<Renderer>();
         
 	}
-	
+
+    private IEnumerator ChangeTextures()
+    {
+        while (currentTexture < textures.Length) {
+            renderer.material.mainTexture = textures[currentTexture];
+            currentTexture++;
+            yield return new WaitForSeconds(delay);
+        }
+        currentTexture = 0;
+    }
+
+    public void StartUpgrade() {
+        
+        renderer.material.mainTexture = textures[currentTexture];
+        StartCoroutine(ChangeTextures());
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey(KeyCode.Space)) {
-            currentTexture++;
-            currentTexture %= textures.Length;
-            renderer.material.mainTexture = textures[currentTexture];   
+            StartUpgrade();
         }
 	}
 }

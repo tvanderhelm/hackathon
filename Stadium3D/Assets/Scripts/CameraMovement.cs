@@ -22,7 +22,7 @@ public class CameraMovement : MonoBehaviour
     public bool zoomToField;
     public bool zoomFromField;
     private bool zoomed;
-
+    public FieldButton fieldButton;
     private Vector3 point;
 
     public GameObject stadium;
@@ -104,6 +104,9 @@ public class CameraMovement : MonoBehaviour
         {
             zoomToField = false;
             fieldAnimation.enabled = true;
+            // we are zoomed to the field, change the button functionality
+//            FieldButton fieldButton = gameObject.GetComponent<FieldButton>();
+            fieldButton.changeButtonState(true);
         }
         else
         {
