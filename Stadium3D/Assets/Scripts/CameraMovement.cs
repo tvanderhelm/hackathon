@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -27,7 +26,8 @@ public class CameraMovement : MonoBehaviour
     private Vector3 lerpTarget;
     private float startTime;
     private float journeyLength;
-    private bool lerpStarted;
+    private bool firstLerpStarted;
+    private bool secondLerpStarted;
 
     private void Start()
     {
@@ -38,102 +38,150 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        if (lerpStarted)
+        if (firstLerpStarted)
         {
-            var distCovered = (Time.time - startTime) * lerpSpeed;
-            var fracJourney = distCovered / journeyLength;
-            transform.position = Vector3.Lerp(transform.position, lerpTarget, fracJourney);
-
-            if (lerpTarget.x - 1.0f <= transform.position.x && lerpTarget.x + 1.0f >= transform.position.x && lerpTarget.y - 1.0f <= transform.position.y && lerpTarget.y + 1.0f >= transform.position.y && lerpTarget.z - 1.0f <= transform.position.z && lerpTarget.z + 1.0f >= transform.position.z)
+            if (Lerp())
             {
-                lerpStarted = false;
+                firstLerpStarted = false;
+                startTime = Time.time;
+                lerpTarget = new Vector3(transform.position.x, transform.position.y + 2000, transform.position.z);
+                secondLerpStarted = true;
+            }
+        }
+        else if (secondLerpStarted)
+        {
+            if (this.Lerp())
+            {
+                secondLerpStarted = false;
+                zoomtoField = true;
             }
         }
         else if (zoomtoField)
         {
-            transform.RotateAround(point, new Vector3(-1.0f, 0.0f, 0.0f), 20 * Time.deltaTime * rotateSpeed * zoomToFieldMultiplier);
-            if (transform.position.y > 8000 && transform.position.y < 11000)
-            {
-                Debug.Log(transform.position.y);
-                if (cameraComponent.orthographic)
-                {
-                    cameraComponent.orthographicSize += zoomToFieldOfView * orthoZoomSpeed;
-                    cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minZoomLevel);
-                }
-                else
-                {
-                    cameraComponent.fieldOfView += zoomToFieldOfView * perspectiveZoomSpeed;
-                    cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minZoomLevel, maxZoomLevel);
-                }
-            }
-            else if (transform.position.y > 11000)
-            {
-                zoomtoField = false;
-            }
+            ZoomToField();
         }
         else
         {
-            var rotateMultiplier = 1f;
-            if (Input.touchCount < 2 && rotating)
+            this.AutoMovement();
+        }
+    }
+
+    /// <summary>
+    /// Lerp to the target specified in the lerpTarget property.
+    /// </summary>
+    /// <returns></returns>
+    private bool Lerp()
+    {
+        var distCovered = (Time.time - startTime) * lerpSpeed;
+        var fracJourney = distCovered / journeyLength;
+        transform.position = Vector3.Lerp(transform.position, lerpTarget, fracJourney);
+
+        return lerpTarget.x - 1.0f <= transform.position.x && lerpTarget.x + 1.0f >= transform.position.x && lerpTarget.y - 1.0f <= transform.position.y && lerpTarget.y + 1.0f >= transform.position.y && lerpTarget.z - 1.0f <= transform.position.z && lerpTarget.z + 1.0f >= transform.position.z;
+    }
+
+    /// <summary>
+    /// Zoom to the field automatically.
+    /// </summary>
+    private void ZoomToField()
+    {
+        transform.RotateAround(point, new Vector3(-1.0f, 0.0f, 0.0f), 20 * Time.deltaTime * rotateSpeed * zoomToFieldMultiplier);
+        if (transform.position.y > 8000 && transform.position.y < 11000)
+        {
+            if (cameraComponent.orthographic)
             {
-                var invert = 1;
-
-                if (Input.touchCount == 1 && !rotatingToStart)
-                {
-                    var touchZero = Input.GetTouch(0);
-
-                    rotateMultiplier = touchZero.deltaPosition.x * touchRotateMultiplier;
-                }
-                if (rotatingToStart)
-                {
-                    rotateMultiplier *= rotatingToStartMultiplier;
-                    if (transform.position.x > 0)
-                    {
-                        invert *= -1;
-                    }
-                }
-                if (rotatingToStart && (transform.rotation.y > 0.981 || transform.rotation.y < -0.981))
-                {
-                    rotating = false;
-                    zoomtoField = true;
-
-                    lerpTarget = new Vector3(0, transform.position.y + 2000, 9665);
-                    startTime = Time.time;
-                    journeyLength = Vector3.Distance(transform.position, lerpTarget);
-
-                    lerpStarted = true;
-                }
-                else
-                {
-                    Debug.Log(transform.rotation.y);
-
-                    transform.RotateAround(point, new Vector3(0.0f, invert * 1.0f, 0.0f), 20f * Time.deltaTime * rotateSpeed * rotateMultiplier);
-                }
+                cameraComponent.orthographicSize += zoomToFieldOfView * orthoZoomSpeed;
+                cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minZoomLevel);
             }
-            else if (Input.touchCount == 2)
+            else
             {
-                var touchZero = Input.GetTouch(0);
-                var touchOne = Input.GetTouch(1);
-
-                var touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-                var touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
-
-                var prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-                var touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
-
-                var deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-
-                if (cameraComponent.orthographic)
-                {
-                    cameraComponent.orthographicSize += deltaMagnitudeDiff * orthoZoomSpeed;
-                    cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minZoomLevel);
-                }
-                else
-                {
-                    cameraComponent.fieldOfView += deltaMagnitudeDiff * perspectiveZoomSpeed;
-                    cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minZoomLevel, maxZoomLevel);
-                }
+                cameraComponent.fieldOfView += zoomToFieldOfView * perspectiveZoomSpeed;
+                cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minZoomLevel, maxZoomLevel);
             }
+        }
+        else if (transform.position.y > 11000)
+        {
+            zoomtoField = false;
+        }
+    }
+
+    /// <summary>
+    /// Handles the auto movement.
+    /// </summary>
+    private void AutoMovement()
+    {
+        if (Input.touchCount < 2 && rotating)
+        {
+            AutoRotate();
+        }
+        else if (Input.touchCount == 2)
+        {
+            ZoomIn();
+        }
+    }
+
+    /// <summary>
+    /// Rotates the camera every second, going faster if the user swipes or wants to go to start.
+    /// </summary>
+    private void AutoRotate()
+    {
+        var rotateMultiplier = 1f;
+        var invert = 1;
+
+        if (Input.touchCount == 1 && !rotatingToStart)
+        {
+            var touchZero = Input.GetTouch(0);
+
+            rotateMultiplier = touchZero.deltaPosition.x * touchRotateMultiplier;
+        }
+        if (rotatingToStart)
+        {
+            rotateMultiplier *= rotatingToStartMultiplier;
+            if (transform.position.x > 0)
+            {
+                invert *= -1;
+            }
+        }
+        if (rotatingToStart && (transform.rotation.y > 0.981 || transform.rotation.y < -0.981))
+        {
+            rotating = false;
+
+            lerpTarget = new Vector3(0, transform.position.y, 9665);
+            startTime = Time.time;
+            journeyLength = Vector3.Distance(transform.position, lerpTarget);
+
+            firstLerpStarted = true;
+        }
+        else
+        {
+            transform.RotateAround(point, new Vector3(0.0f, invert * 1.0f, 0.0f), 20f * Time.deltaTime * rotateSpeed * rotateMultiplier);
+        }
+    }
+
+    /// <summary>
+    /// Handles a pinch and zoom.
+    /// </summary>
+    private void ZoomIn()
+    {
+        var touchZero = Input.GetTouch(0);
+        var touchOne = Input.GetTouch(1);
+
+        var touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+        var touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+        var prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+        var touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+        var deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+        if (cameraComponent.orthographic)
+        {
+            cameraComponent.orthographicSize += deltaMagnitudeDiff * orthoZoomSpeed;
+            cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minZoomLevel);
+        }
+        else
+        {
+            cameraComponent.fieldOfView += deltaMagnitudeDiff * perspectiveZoomSpeed;
+            cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minZoomLevel, maxZoomLevel);
         }
     }
 }
