@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stadium3D.CSharp.Plugins", "Stadium3D.CSharp.Plugins.csproj", "{F1666501-95E5-53FA-94D6-43AFF75D5D1C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stadium3D.CSharp", "Stadium3D.CSharp.csproj", "{E3B4F4C2-607C-EF96-F750-E6FEE0EE5B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stadium3D.CSharp.Editor", "Stadium3D.CSharp.Editor.csproj", "{0E1ECBF1-D925-A08C-B838-AB66A0BD16B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1666501-95E5-53FA-94D6-43AFF75D5D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1666501-95E5-53FA-94D6-43AFF75D5D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1666501-95E5-53FA-94D6-43AFF75D5D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1666501-95E5-53FA-94D6-43AFF75D5D1C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3B4F4C2-607C-EF96-F750-E6FEE0EE5B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3B4F4C2-607C-EF96-F750-E6FEE0EE5B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3B4F4C2-607C-EF96-F750-E6FEE0EE5B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3B4F4C2-607C-EF96-F750-E6FEE0EE5B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1ECBF1-D925-A08C-B838-AB66A0BD16B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1ECBF1-D925-A08C-B838-AB66A0BD16B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1ECBF1-D925-A08C-B838-AB66A0BD16B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1ECBF1-D925-A08C-B838-AB66A0BD16B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
