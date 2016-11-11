@@ -405,6 +405,7 @@ MonoBehaviour:
   stadium: {fileID: 1705124901}
   cameraComponent: {fileID: 0}
   lerpSpeed: 1500
+  fieldAnimation: {fileID: 547082936}
 --- !u!1001 &547082933
 Prefab:
   m_ObjectHideFlags: 0
@@ -456,6 +457,14 @@ Prefab:
       propertyPath: m_Name
       value: field animation
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
   m_IsPrefabParent: 0
@@ -474,9 +483,14 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
   m_Animations: []
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!95 &547082936 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: 067f4fe50682b364b92c14e4ffdd60c3,
+    type: 3}
+  m_PrefabInternal: {fileID: 547082933}
 --- !u!1 &561516625
 GameObject:
   m_ObjectHideFlags: 0

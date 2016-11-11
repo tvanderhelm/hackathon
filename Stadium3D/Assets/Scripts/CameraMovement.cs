@@ -15,25 +15,28 @@ public class CameraMovement : MonoBehaviour
     public float rotatingToStartMultiplier = 20f;
 
     public bool zoomtoField;
-
     private Vector3 point;
 
     public GameObject stadium;
     public Camera cameraComponent;
-    private Animator fieldAnimation;
-
+   
     public float lerpSpeed = 50f;
     private Vector3 lerpTarget;
     private float startTime;
     private float journeyLength;
     private bool firstLerpStarted;
     private bool secondLerpStarted;
+    public Animator fieldAnimation;
+
+
 
     private void Start()
     {
         cameraComponent = GetComponent<Camera>();
         point = stadium.transform.position;
         transform.LookAt(point);
+        fieldAnimation.enabled = false;
+
     }
 
     private void Update()
@@ -101,6 +104,8 @@ public class CameraMovement : MonoBehaviour
         else if (transform.position.y > 11000)
         {
             zoomtoField = false;
+            fieldAnimation.enabled = true;
+            fieldAnimation.Play("Take 001");
         }
     }
 
