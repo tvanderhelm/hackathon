@@ -26,12 +26,13 @@ public class CameraMovement : MonoBehaviour
 
     public GameObject stadium;
     public Camera cameraComponent;
-    private Animator fieldAnimation;
+    public Animator fieldAnimation;
 
     private Vector3 lerpTarget;
     private float startTime;
     private float journeyLength;
     private bool firstLerpStarted;
+
 
     private readonly Quaternion originalRotatingTarget = new Quaternion(0f, 0.98f, -0.2f, 0f);
     private readonly Quaternion zoomedInRotatingTarget = new Quaternion(0f, 0.831f, -0.556f, 0f);
@@ -41,6 +42,7 @@ public class CameraMovement : MonoBehaviour
         cameraComponent = GetComponent<Camera>();
         point = stadium.transform.position;
         transform.LookAt(point);
+        fieldAnimation.enabled = false;
     }
 
     private void Update()
@@ -100,6 +102,7 @@ public class CameraMovement : MonoBehaviour
         if (Lerp())
         {
             zoomToField = false;
+            fieldAnimation.enabled = true;
         }
         else
         {

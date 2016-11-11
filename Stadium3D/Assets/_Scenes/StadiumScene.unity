@@ -397,16 +397,18 @@ MonoBehaviour:
   rotateSpeed: 0.1
   minZoomLevel: 15
   maxZoomLevel: 80
+  originalZoomLevel: 55
   touchRotateMultiplier: 1
   zoomToFieldOfView: -1.5
   rotatingToStartMultiplier: 20
   turningRate: 60
+  lerpSpeed: 500
   shouldInvert: 0
-  zoomtoField: 0
+  zoomToField: 0
   zoomFromField: 0
   stadium: {fileID: 1705124901}
   cameraComponent: {fileID: 0}
-  lerpSpeed: 500
+  fieldAnimation: {fileID: 547082936}
 --- !u!1001 &547082933
 Prefab:
   m_ObjectHideFlags: 0
@@ -479,6 +481,11 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!95 &547082936 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: 067f4fe50682b364b92c14e4ffdd60c3,
+    type: 3}
+  m_PrefabInternal: {fileID: 547082933}
 --- !u!1 &561516625
 GameObject:
   m_ObjectHideFlags: 0
