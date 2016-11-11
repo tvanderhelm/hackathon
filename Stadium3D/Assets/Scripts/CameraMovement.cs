@@ -9,6 +9,7 @@ public class CameraMovement : MonoBehaviour
     public float rotateSpeed = 10f;
     public float minZoomLevel = 15f;
     public float maxZoomLevel = 80f;
+    public float minAutoZoomLevel = 30f;
     public float originalZoomLevel = 55f;
     public float touchRotateMultiplier = 2f;
     public float zoomToFieldOfView = -0.5f;
@@ -109,18 +110,15 @@ public class CameraMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, zoomedInRotatingTarget, turningRate * Time.deltaTime);
         }
 
-        if (transform.position.y > 8000 && transform.position.y < 11000)
+        if (cameraComponent.orthographic)
         {
-            if (cameraComponent.orthographic)
-            {
-                cameraComponent.orthographicSize += zoomToFieldOfView * orthoZoomSpeed;
-                cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minZoomLevel);
-            }
-            else
-            {
-                cameraComponent.fieldOfView += zoomToFieldOfView * perspectiveZoomSpeed;
-                cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minZoomLevel, maxZoomLevel);
-            }
+            cameraComponent.orthographicSize += zoomToFieldOfView * orthoZoomSpeed;
+            cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minAutoZoomLevel);
+        }
+        else
+        {
+            cameraComponent.fieldOfView += zoomToFieldOfView * perspectiveZoomSpeed;
+            cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minAutoZoomLevel, maxZoomLevel);
         }
     }
 
@@ -140,18 +138,15 @@ public class CameraMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, originalRotatingTarget, turningRate * Time.deltaTime);
         }
 
-        if (transform.position.y > 8000 && transform.position.y < 11000)
+        if (cameraComponent.orthographic)
         {
-            if (cameraComponent.orthographic)
-            {
-                cameraComponent.orthographicSize -= zoomToFieldOfView * orthoZoomSpeed;
-                cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minZoomLevel);
-            }
-            else
-            {
-                cameraComponent.fieldOfView -= zoomToFieldOfView * perspectiveZoomSpeed;
-                cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minZoomLevel, originalZoomLevel);
-            }
+            cameraComponent.orthographicSize -= zoomToFieldOfView * orthoZoomSpeed;
+            cameraComponent.orthographicSize = Mathf.Max(cameraComponent.orthographicSize, minZoomLevel);
+        }
+        else
+        {
+            cameraComponent.fieldOfView -= zoomToFieldOfView * perspectiveZoomSpeed;
+            cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minAutoZoomLevel, originalZoomLevel);
         }
     }
 
