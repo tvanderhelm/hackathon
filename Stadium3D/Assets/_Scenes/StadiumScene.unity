@@ -373,7 +373,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 500773718}
   m_LocalRotation: {x: 0, y: 0.9848078, z: -0.17364816, w: 0}
-  m_LocalPosition: {x: 148, y: 3954, z: 9665}
+  m_LocalPosition: {x: 0, y: 3954, z: 9665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 20, y: 180, z: 0}
   m_Children: []
@@ -398,13 +398,13 @@ MonoBehaviour:
   minZoomLevel: 15
   maxZoomLevel: 80
   touchRotateMultiplier: 1
-  zoomToFieldMultiplier: 12
-  zoomToFieldOfView: -0.75
+  zoomToFieldMultiplier: 16
+  zoomToFieldOfView: -1
   rotatingToStartMultiplier: 20
   zoomtoField: 0
   stadium: {fileID: 1705124901}
   cameraComponent: {fileID: 0}
-  lerpSpeed: 100
+  lerpSpeed: 1500
 --- !u!1001 &547082933
 Prefab:
   m_ObjectHideFlags: 0
