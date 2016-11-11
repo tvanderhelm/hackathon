@@ -401,6 +401,7 @@ MonoBehaviour:
   zoomToFieldMultiplier: 16
   zoomToFieldOfView: -1
   rotatingToStartMultiplier: 20
+  turningRate: 45
   zoomtoField: 0
   zoomFromField: 0
   stadium: {fileID: 1705124901}
