@@ -24,8 +24,6 @@ public class TextureChanger : MonoBehaviour {
     }
 
     public void StartUpgrade() {
-        
-        renderer.material.mainTexture = textures[currentTexture];
         StartCoroutine(ChangeTextures());
     }
 
