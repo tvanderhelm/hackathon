@@ -868,7 +868,7 @@ MonoBehaviour:
   fieldButton: {fileID: 1997033430}
   stadium: {fileID: 1596295820}
   cameraComponent: {fileID: 0}
-  fieldAnimation: {fileID: 547082936}
+  field: {fileID: 547082934}
 --- !u!114 &500773725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,9 +961,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
   m_IsPrefabParent: 0
 --- !u!1 &547082934 stripped
@@ -979,16 +980,12 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 067f4fe50682b364b92c14e4ffdd60c3, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!95 &547082936 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 9500000, guid: 067f4fe50682b364b92c14e4ffdd60c3,
-    type: 3}
-  m_PrefabInternal: {fileID: 547082933}
 --- !u!114 &547082940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1818,7 +1815,7 @@ GameObject:
   - 33: {fileID: 1597192674}
   - 23: {fileID: 1597192673}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Distance_ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -27,7 +27,8 @@ public class CameraMovement : MonoBehaviour
 
     public GameObject stadium;
     public Camera cameraComponent;
-    public Animator fieldAnimation;
+
+    public GameObject field;
 
     private Vector3 lerpTarget;
     private float startTime;
@@ -43,7 +44,6 @@ public class CameraMovement : MonoBehaviour
         cameraComponent = GetComponent<Camera>();
         point = stadium.transform.position;
         transform.LookAt(point);
-        fieldAnimation.enabled = false;
     }
 
     private void Update()
@@ -76,6 +76,10 @@ public class CameraMovement : MonoBehaviour
             transform.LookAt(stadium.transform.position);
             lerpTarget = new Vector3(0, 62, 90);
             zoomFromField = true;
+
+            var anim = field.GetComponent<Animation>();
+            
+            //anim.Play("field_reverse");
         }
         else
         {
@@ -104,9 +108,8 @@ public class CameraMovement : MonoBehaviour
         if (Lerp())
         {
             zoomToField = false;
-            fieldAnimation.enabled = true;
-            // we are zoomed to the field, change the button functionality
-//            FieldButton fieldButton = gameObject.GetComponent<FieldButton>();
+            var anim = field.GetComponent<Animation>();
+            anim.Play("Take 001");
             fieldButton.changeButtonState(true);
         }
         else
