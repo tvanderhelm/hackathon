@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 26f7d72086f912145b53181affd1e9de
-timeCreated: 1478702562
+timeCreated: 1478978364
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fieldButton: {instanceID: 0}
+  - stadium: {fileID: 103008, guid: 14bf1e99200a4d34796c97208207aa54, type: 3}
+  - cameraComponent: {instanceID: 0}
+  - fieldAnimation: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

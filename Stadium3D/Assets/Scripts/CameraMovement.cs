@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
     public float originalZoomLevel = 55f;
     public float touchRotateMultiplier = 2f;
     public float zoomToFieldOfView = -0.5f;
-    public float rotatingToStartMultiplier = 20f;
+    public float rotatingToStartMultiplier = 0.02f;
     public float turningRate = 30f;
     public float lerpSpeed = 50f;
 
@@ -54,7 +54,7 @@ public class CameraMovement : MonoBehaviour
             {
                 firstLerpStarted = false;
                 startTime = Time.time;
-                lerpTarget = new Vector3(0, 11024, 2450);
+                lerpTarget = new Vector3(0, 110, 24);
                 zoomToField = true;
             }
             else
@@ -88,7 +88,7 @@ public class CameraMovement : MonoBehaviour
     /// <returns></returns>
     private bool Lerp()
     {
-        var distCovered = (Time.time - startTime) * lerpSpeed;
+        var distCovered = ((Time.time - startTime) * lerpSpeed)/100;
         var fracJourney = distCovered / journeyLength;
         transform.position = Vector3.Slerp(transform.position, lerpTarget, fracJourney);
 
@@ -173,7 +173,7 @@ public class CameraMovement : MonoBehaviour
     /// </summary>
     private void AutoRotate()
     {
-        var rotateMultiplier = 1f;
+        var rotateMultiplier = 5f;
         var invert = 1;
 
         if (Input.touchCount == 1 && !rotatingToStart)
@@ -190,7 +190,7 @@ public class CameraMovement : MonoBehaviour
                 invert *= -1;
             }
         }
-        if (rotatingToStart && (transform.rotation.y > 0.97 || transform.rotation.y < -0.97))
+        if (rotatingToStart && (transform.rotation.y > 0.90 && transform.rotation.y < 0.95))
         {
             rotating = false;
             rotatingToStart = false;

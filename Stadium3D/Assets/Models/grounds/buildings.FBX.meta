@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: b0b25bda345a27346b5d3941b8b4d7a0
+timeCreated: 1478986943
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cylinder043
+    100004: Cylinder044
+    100006: Cylinder045
+    100008: Cylinder046
+    100010: Rectangle010
+    100012: s_018
+    100014: s_019
+    100016: s_049
+    100018: s_set_bank_geo_004
+    100020: s_set_bank_geo_005
+    100022: s_set_barbershop_geo_001
+    100024: s_set_bushalte_geo_001
+    100026: s_set_field_geo_003
+    100028: s_set_gym_geo_001
+    100030: s_set_mall_geo_001
+    100032: s_set_parking_geo_001
+    100034: s_set_petshop_geo_001
+    100036: s_set_restaurant_b_geo_001
+    100038: s_set_restaurant_b_geo_002
+    100040: s_set_restaurant_geo_001
+    100042: s_set_super_geo_001
+    100044: s_stadium_trainercomplex_geo_001
+    100046: s_streetlight_geo_012
+    400000: //RootNode
+    400002: Cylinder043
+    400004: Cylinder044
+    400006: Cylinder045
+    400008: Cylinder046
+    400010: Rectangle010
+    400012: s_018
+    400014: s_019
+    400016: s_049
+    400018: s_set_bank_geo_004
+    400020: s_set_bank_geo_005
+    400022: s_set_barbershop_geo_001
+    400024: s_set_bushalte_geo_001
+    400026: s_set_field_geo_003
+    400028: s_set_gym_geo_001
+    400030: s_set_mall_geo_001
+    400032: s_set_parking_geo_001
+    400034: s_set_petshop_geo_001
+    400036: s_set_restaurant_b_geo_001
+    400038: s_set_restaurant_b_geo_002
+    400040: s_set_restaurant_geo_001
+    400042: s_set_super_geo_001
+    400044: s_stadium_trainercomplex_geo_001
+    400046: s_streetlight_geo_012
+    2300000: Cylinder043
+    2300002: Cylinder044
+    2300004: Cylinder045
+    2300006: Cylinder046
+    2300008: Rectangle010
+    2300010: s_018
+    2300012: s_019
+    2300014: s_049
+    2300016: s_set_bank_geo_004
+    2300018: s_set_bank_geo_005
+    2300020: s_set_barbershop_geo_001
+    2300022: s_set_bushalte_geo_001
+    2300024: s_set_field_geo_003
+    2300026: s_set_gym_geo_001
+    2300028: s_set_mall_geo_001
+    2300030: s_set_parking_geo_001
+    2300032: s_set_petshop_geo_001
+    2300034: s_set_restaurant_b_geo_001
+    2300036: s_set_restaurant_b_geo_002
+    2300038: s_set_restaurant_geo_001
+    2300040: s_set_super_geo_001
+    2300042: s_stadium_trainercomplex_geo_001
+    2300044: s_streetlight_geo_012
+    3300000: Cylinder043
+    3300002: Cylinder044
+    3300004: Cylinder045
+    3300006: Cylinder046
+    3300008: Rectangle010
+    3300010: s_018
+    3300012: s_019
+    3300014: s_049
+    3300016: s_set_bank_geo_004
+    3300018: s_set_bank_geo_005
+    3300020: s_set_barbershop_geo_001
+    3300022: s_set_bushalte_geo_001
+    3300024: s_set_field_geo_003
+    3300026: s_set_gym_geo_001
+    3300028: s_set_mall_geo_001
+    3300030: s_set_parking_geo_001
+    3300032: s_set_petshop_geo_001
+    3300034: s_set_restaurant_b_geo_001
+    3300036: s_set_restaurant_b_geo_002
+    3300038: s_set_restaurant_geo_001
+    3300040: s_set_super_geo_001
+    3300042: s_stadium_trainercomplex_geo_001
+    3300044: s_streetlight_geo_012
+    4300000: s_stadium_trainercomplex_geo_001
+    4300002: s_streetlight_geo_012
+    4300004: s_set_bushalte_geo_001
+    4300006: s_set_restaurant_geo_001
+    4300008: s_set_petshop_geo_001
+    4300010: s_set_mall_geo_001
+    4300012: s_set_restaurant_b_geo_001
+    4300014: s_set_gym_geo_001
+    4300016: s_set_parking_geo_001
+    4300018: s_set_super_geo_001
+    4300020: s_set_barbershop_geo_001
+    4300022: s_set_field_geo_003
+    4300024: s_018
+    4300026: Cylinder046
+    4300028: Cylinder045
+    4300030: Cylinder044
+    4300032: Rectangle010
+    4300034: Cylinder043
+    4300036: s_019
+    4300038: s_049
+    4300040: s_set_bank_geo_004
+    4300042: s_set_bank_geo_005
+    4300044: s_set_restaurant_b_geo_002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
