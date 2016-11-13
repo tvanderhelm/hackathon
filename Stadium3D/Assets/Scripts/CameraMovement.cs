@@ -73,7 +73,8 @@ public class CameraMovement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
             startTime = Time.time;
-            lerpTarget = new Vector3(0, 9954, 19665);
+            transform.LookAt(stadium.transform.position);
+            lerpTarget = new Vector3(0, 62, 90);
             zoomFromField = true;
         }
         else
