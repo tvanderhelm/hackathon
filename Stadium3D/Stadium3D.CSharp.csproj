@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\FieldButton.cs" />
     <Compile Include="Assets\Scripts\LightsButton.cs" />
+    <Compile Include="Assets\Scripts\UpgradeStadium.cs" />
     <Compile Include="Assets\TextureChanger.cs" />
   </ItemGroup>
   <ItemGroup>
