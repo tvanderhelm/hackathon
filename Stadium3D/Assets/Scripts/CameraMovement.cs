@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
     public bool rotatingToStart;
     public float perspectiveZoomSpeed = 0.5f;
     public float orthoZoomSpeed = 0.5f;
-    public float rotateSpeed = 10f;
+    public float rotateSpeed = 7f;
     public float minZoomLevel = 15f;
     public float maxZoomLevel = 80f;
     public float minAutoZoomLevel = 30f;
@@ -191,7 +191,7 @@ public class CameraMovement : MonoBehaviour
                 invert *= -1;
             }
         }
-        if (rotatingToStart && (transform.rotation.y > 0.90 && transform.rotation.y < 0.95))
+        if (rotatingToStart && (transform.rotation.y > 0.89 && transform.rotation.y < 0.96))
         {
             rotating = false;
             rotatingToStart = false;
