@@ -11,9 +11,14 @@ public class LightsButton : MonoBehaviour
 
     public Light[] bigLights;
     public Behaviour[] bigHalo;
+    public Material NightSkybox;
+    public Material DaySkybox;
 
     private int currentLight;
     private bool smallActive = false;
+    private Color dayFogColor = new Color(0.612f, 0.69f, 0.337f, 1f);
+    private Color nightFogColor = new Color(0.255f, 0.35f, 0.224f, 1f);
+
     private bool showHalo = true;
 
     private void Start()
@@ -30,6 +35,10 @@ public class LightsButton : MonoBehaviour
             ToggleHalo(LowerRightLight, true);
             ToggleHalo(UpperLeftLight, true);
             ToggleHalo(LowerLeftLight, true);
+
+            RenderSettings.skybox = NightSkybox;
+            RenderSettings.fogColor = nightFogColor;
+            DynamicGI.UpdateEnvironment();
         }
     }
 
@@ -51,6 +60,19 @@ public class LightsButton : MonoBehaviour
             LowerRightLight.enabled = !LowerRightLight.enabled;
             UpperLeftLight.enabled = !UpperLeftLight.enabled;
             LowerLeftLight.enabled = !LowerLeftLight.enabled;
+
+        if (RenderSettings.skybox == NightSkybox)
+        {
+            RenderSettings.skybox = DaySkybox;
+            RenderSettings.fogColor = dayFogColor;
+        }
+        else
+        {
+            RenderSettings.skybox = NightSkybox;
+            RenderSettings.fogColor = nightFogColor;
+        }
+        
+        DynamicGI.UpdateEnvironment();
 
 
             if (showHalo)
