@@ -15,7 +15,6 @@ public class CameraMovement : MonoBehaviour
     public float zoomToFieldOfView = -0.5f;
     public float rotatingToStartMultiplier = 0.02f;
     public float turningRate = 30f;
-    public float lerpSpeed = 50f;
 
     public bool shouldInvert;
 
@@ -34,11 +33,12 @@ public class CameraMovement : MonoBehaviour
 
     public GameObject field;
 
-    private Vector3 lerpTarget;
-    private float startTime;
-    private float journeyLength;
+    private Vector3 moveTarget;
     private bool firstLerpStarted;
 
+    private Vector3 velocity;
+    public float zoomSmoothTime = 0.5f;
+    public float correctionSmoothTime = 0.1f;
 
     private readonly Quaternion originalRotatingTarget = new Quaternion(0f, 0.98f, -0.2f, 0f);
     private readonly Quaternion zoomedInRotatingTarget = new Quaternion(0f, 0.831f, -0.556f, 0f);
@@ -54,12 +54,10 @@ public class CameraMovement : MonoBehaviour
     {
         if (firstLerpStarted)
         {
-            if (Lerp())
+            if (Lerp(correctionSmoothTime))
             {
                 firstLerpStarted = false;
-                startTime = Time.time;
-                lerpTarget = new Vector3(0, 110, 24);
-                journeyLength = Vector3.Distance(transform.position, lerpTarget);
+                moveTarget = new Vector3(0, 110, 24);
                 zoomToField = true;
                 ToggleStadiumName(false);
             }
@@ -78,10 +76,8 @@ public class CameraMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            startTime = Time.time;
             transform.LookAt(stadium.transform.position);
-            lerpTarget = new Vector3(0, 62, 223);
-            journeyLength = Vector3.Distance(transform.position, lerpTarget);
+            moveTarget = new Vector3(0, 62, 223);
             zoomFromField = true;
 
             var anim = field.GetComponent<Animation>();
@@ -104,13 +100,11 @@ public class CameraMovement : MonoBehaviour
     /// Lerp to the target specified in the lerpTarget property.
     /// </summary>
     /// <returns></returns>
-    private bool Lerp()
+    private bool Lerp(float smoothTime)
     {
-        var distCovered = (Time.time - startTime) * lerpSpeed/100;
-        var fracJourney = distCovered / journeyLength;
-        transform.position = Vector3.Slerp(transform.position, lerpTarget, fracJourney);
+        transform.position = Vector3.SmoothDamp(transform.position, moveTarget, ref velocity, smoothTime);
 
-        return lerpTarget.x - 1.0f <= transform.position.x && lerpTarget.x + 1.0f >= transform.position.x && lerpTarget.y - 1.0f <= transform.position.y && lerpTarget.y + 1.0f >= transform.position.y && lerpTarget.z - 1.0f <= transform.position.z && lerpTarget.z + 1.0f >= transform.position.z;
+        return moveTarget.x - 1.0f <= transform.position.x && moveTarget.x + 1.0f >= transform.position.x && moveTarget.y - 1.0f <= transform.position.y && moveTarget.y + 1.0f >= transform.position.y && moveTarget.z - 1.0f <= transform.position.z && moveTarget.z + 1.0f >= transform.position.z;
     }
 
     /// <summary>
@@ -118,7 +112,7 @@ public class CameraMovement : MonoBehaviour
     /// </summary>
     private void ZoomToField()
     {
-        if (Lerp())
+        if (Lerp(zoomSmoothTime))
         {
             zoomToField = false;
             var anim = field.GetComponent<Animation>();
@@ -148,7 +142,7 @@ public class CameraMovement : MonoBehaviour
     /// </summary>
     private void ZoomFromField()
     {
-        if (Lerp())
+        if (Lerp(zoomSmoothTime))
         {
             zoomFromField = false;
             zoomed = false;
@@ -209,14 +203,12 @@ public class CameraMovement : MonoBehaviour
                 invert *= -1;
             }
         }
-        if (rotatingToStart && transform.position.z > 222)
+        if (rotatingToStart && transform.position.z > 221)
         {
             rotating = false;
             rotatingToStart = false;
 
-            lerpTarget = new Vector3(0, transform.position.y, 223);
-            startTime = Time.time;
-            journeyLength = Vector3.Distance(transform.position, lerpTarget);
+            moveTarget = new Vector3(0, transform.position.y, 222);
 
             firstLerpStarted = true;
         }
