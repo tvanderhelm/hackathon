@@ -8,6 +8,7 @@ public class TextureChanger : MonoBehaviour {
     const float delay = 0.05f;
     public GameObject[] particleHolders;
     private Vector3 moveBy;
+    private float startX;
 
     // Use this for initialization
     void Start () {
@@ -15,6 +16,7 @@ public class TextureChanger : MonoBehaviour {
         foreach (GameObject child in particleHolders)
         {
             child.active = false;
+            startX = child.transform.position.x;
         }
         moveBy = new Vector3(-1.5f, 0, 0);
     }
@@ -36,6 +38,12 @@ public class TextureChanger : MonoBehaviour {
             
 
             yield return new WaitForSeconds(delay);
+        }
+        foreach (GameObject child in particleHolders)
+        {
+            // reset the position
+            child.transform.position = new Vector3(child.transform.position.x + 1.5f* textures.Length, child.transform.position.y, child.transform.position.z);
+            child.active = false;
         }
         currentTexture = 0;
     }
