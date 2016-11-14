@@ -8,7 +8,7 @@ public class UpgradeStadium : MonoBehaviour
 
     private void Start()
     {
-        lightsScript = GameObject.Find("Lights Button").GetComponent<LightsButton>();
+        lightsScript = GameObject.Find("AndroidMsgReceiver").GetComponent<LightsButton>();
     }
 
 	public void OnClick()

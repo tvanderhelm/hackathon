@@ -3,6 +3,8 @@ using System.Collections;
 
 public class AndroidMsgReceiver : MonoBehaviour
 {
+    
+    private bool zoomed;
 
     public void ReceiveMsg(string s)
     {
@@ -16,9 +18,13 @@ public class AndroidMsgReceiver : MonoBehaviour
                 break;
             case "lights":
 
+                LightsButton lightsButton = GameObject.Find("AndroidMsgReceiver").GetComponent<LightsButton>();
+                lightsButton.OnClick();
+
                 break;
             case "field":
-
+                FieldButton fieldButton = GameObject.Find("AndroidMsgReceiver").GetComponent<FieldButton>();
+                fieldButton.OnClick();
                 break;
             default:
                 Debug.Log("Uncaught string: " + s);
