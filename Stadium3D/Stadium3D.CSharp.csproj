@@ -69,10 +69,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AndroidMsgReceiver.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\FieldButton.cs" />
     <Compile Include="Assets\Scripts\LightsButton.cs" />
-    <Compile Include="Assets\Scripts\MsgReceiver.cs" />
     <Compile Include="Assets\Scripts\TextFollowCamera.cs" />
     <Compile Include="Assets\Scripts\UpgradeStadium.cs" />
     <Compile Include="Assets\TextureChanger.cs" />
