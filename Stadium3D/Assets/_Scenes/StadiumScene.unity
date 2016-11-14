@@ -1009,6 +1009,7 @@ MonoBehaviour:
   currentTexture: 0
   renderer: {fileID: 0}
   child1: {fileID: 627728423}
+  child2: {fileID: 671866323}
 --- !u!1 &561516625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1197,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 1640019360
+  randomSeed: 331337051
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -3090,7 +3091,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -1902252475
+  randomSeed: -40259793
   InitialModule:
     serializedVersion: 2
     enabled: 1
