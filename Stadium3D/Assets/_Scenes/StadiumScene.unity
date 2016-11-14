@@ -1018,8 +1018,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b3e25fb2d251bdd4983ef2faa580afcf, type: 3}
   currentTexture: 0
   renderer: {fileID: 0}
-  child1: {fileID: 627728423}
-  child2: {fileID: 671866323}
+  particleHolders:
+  - {fileID: 627728423}
+  - {fileID: 671866323}
 --- !u!1 &551057867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1288,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -1994522075
+  randomSeed: -3568708
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -3066,6 +3067,7 @@ GameObject:
   - 4: {fileID: 671866324}
   - 198: {fileID: 671866326}
   - 199: {fileID: 671866325}
+  - 114: {fileID: 671866327}
   m_Layer: 0
   m_Name: particleHolder2
   m_TagString: Untagged
@@ -3180,7 +3182,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 306459777
+  randomSeed: -1378648393
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -4884,6 +4886,17 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!114 &671866327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671866323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e9fe879e2f23d4e8f5209a7bf3668c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &692112588
 GameObject:
   m_ObjectHideFlags: 0
