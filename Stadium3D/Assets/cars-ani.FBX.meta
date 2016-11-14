@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: 1928a0766cc96c24d8386aff9b876044
+timeCreated: 1479128309
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Car01
+    100002: Car02
+    100004: Car03
+    100006: Car04
+    100008: Car04 1
+    100010: Car08
+    100012: Car09
+    100014: Car10
+    100016: Car11
+    100018: Car12
+    100020: Car13
+    100022: //RootNode
+    100024: s_car_geo_001
+    100026: s_car_geo_003
+    100028: s_car_geo_004
+    100030: s_car_geo_005
+    100032: s_car_geo_006
+    100034: s_car_geo_007
+    100036: s_car_geo_008
+    100038: s_car_geo_009
+    100040: s_car_geo_011
+    100042: s_car_geo_012
+    100044: s_car_geo_013
+    100046: s_car_wheels_geo_001
+    100048: s_car_wheels_geo_003
+    100050: s_car_wheels_geo_004
+    100052: s_car_wheels_geo_005
+    100054: s_car_wheels_geo_006
+    100056: s_car_wheels_geo_007
+    100058: s_car_wheels_geo_008
+    100060: s_car_wheels_geo_009
+    100062: s_car_wheels_geo_011
+    100064: s_car_wheels_geo_012
+    100066: s_car_wheels_geo_013
+    400000: Car01
+    400002: Car02
+    400004: Car03
+    400006: Car04
+    400008: Car04 1
+    400010: Car08
+    400012: Car09
+    400014: Car10
+    400016: Car11
+    400018: Car12
+    400020: Car13
+    400022: //RootNode
+    400024: s_car_geo_001
+    400026: s_car_geo_003
+    400028: s_car_geo_004
+    400030: s_car_geo_005
+    400032: s_car_geo_006
+    400034: s_car_geo_007
+    400036: s_car_geo_008
+    400038: s_car_geo_009
+    400040: s_car_geo_011
+    400042: s_car_geo_012
+    400044: s_car_geo_013
+    400046: s_car_wheels_geo_001
+    400048: s_car_wheels_geo_003
+    400050: s_car_wheels_geo_004
+    400052: s_car_wheels_geo_005
+    400054: s_car_wheels_geo_006
+    400056: s_car_wheels_geo_007
+    400058: s_car_wheels_geo_008
+    400060: s_car_wheels_geo_009
+    400062: s_car_wheels_geo_011
+    400064: s_car_wheels_geo_012
+    400066: s_car_wheels_geo_013
+    2300000: s_car_geo_001
+    2300002: s_car_geo_003
+    2300004: s_car_geo_004
+    2300006: s_car_geo_005
+    2300008: s_car_geo_006
+    2300010: s_car_geo_007
+    2300012: s_car_geo_008
+    2300014: s_car_geo_009
+    2300016: s_car_geo_011
+    2300018: s_car_geo_012
+    2300020: s_car_geo_013
+    2300022: s_car_wheels_geo_001
+    2300024: s_car_wheels_geo_003
+    2300026: s_car_wheels_geo_004
+    2300028: s_car_wheels_geo_005
+    2300030: s_car_wheels_geo_006
+    2300032: s_car_wheels_geo_007
+    2300034: s_car_wheels_geo_008
+    2300036: s_car_wheels_geo_009
+    2300038: s_car_wheels_geo_011
+    2300040: s_car_wheels_geo_012
+    2300042: s_car_wheels_geo_013
+    3300000: s_car_geo_001
+    3300002: s_car_geo_003
+    3300004: s_car_geo_004
+    3300006: s_car_geo_005
+    3300008: s_car_geo_006
+    3300010: s_car_geo_007
+    3300012: s_car_geo_008
+    3300014: s_car_geo_009
+    3300016: s_car_geo_011
+    3300018: s_car_geo_012
+    3300020: s_car_geo_013
+    3300022: s_car_wheels_geo_001
+    3300024: s_car_wheels_geo_003
+    3300026: s_car_wheels_geo_004
+    3300028: s_car_wheels_geo_005
+    3300030: s_car_wheels_geo_006
+    3300032: s_car_wheels_geo_007
+    3300034: s_car_wheels_geo_008
+    3300036: s_car_wheels_geo_009
+    3300038: s_car_wheels_geo_011
+    3300040: s_car_wheels_geo_012
+    3300042: s_car_wheels_geo_013
+    4300000: s_car_geo_007
+    4300002: s_car_wheels_geo_007
+    4300004: s_car_geo_013
+    4300006: s_car_wheels_geo_013
+    4300008: s_car_geo_011
+    4300010: s_car_wheels_geo_011
+    4300012: s_car_geo_012
+    4300014: s_car_wheels_geo_012
+    4300016: s_car_geo_001
+    4300018: s_car_wheels_geo_001
+    4300020: s_car_geo_008
+    4300022: s_car_wheels_geo_008
+    4300024: s_car_geo_009
+    4300026: s_car_wheels_geo_009
+    4300028: s_car_geo_003
+    4300030: s_car_wheels_geo_003
+    4300032: s_car_geo_006
+    4300034: s_car_wheels_geo_006
+    4300036: s_car_geo_004
+    4300038: s_car_wheels_geo_004
+    4300040: s_car_geo_005
+    4300042: s_car_wheels_geo_005
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 500
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Car01
+        weight: 1
+      - path: Car01/s_car_geo_007
+        weight: 1
+      - path: Car01/s_car_geo_007/s_car_wheels_geo_007
+        weight: 1
+      - path: Car02
+        weight: 1
+      - path: Car02/s_car_geo_013
+        weight: 1
+      - path: Car02/s_car_geo_013/s_car_wheels_geo_013
+        weight: 1
+      - path: Car03
+        weight: 1
+      - path: Car03/s_car_geo_011
+        weight: 1
+      - path: Car03/s_car_geo_011/s_car_wheels_geo_011
+        weight: 1
+      - path: Car04
+        weight: 1
+      - path: Car04/s_car_geo_012
+        weight: 1
+      - path: Car04/s_car_geo_012/s_car_wheels_geo_012
+        weight: 1
+      - path: Car04 1
+        weight: 1
+      - path: Car04 1/s_car_geo_001
+        weight: 1
+      - path: Car04 1/s_car_geo_001/s_car_wheels_geo_001
+        weight: 1
+      - path: Car08
+        weight: 1
+      - path: Car08/s_car_geo_008
+        weight: 1
+      - path: Car08/s_car_geo_008/s_car_wheels_geo_008
+        weight: 1
+      - path: Car09
+        weight: 1
+      - path: Car09/s_car_geo_009
+        weight: 1
+      - path: Car09/s_car_geo_009/s_car_wheels_geo_009
+        weight: 1
+      - path: Car10
+        weight: 1
+      - path: Car10/s_car_geo_003
+        weight: 1
+      - path: Car10/s_car_geo_003/s_car_wheels_geo_003
+        weight: 1
+      - path: Car11
+        weight: 1
+      - path: Car11/s_car_geo_006
+        weight: 1
+      - path: Car11/s_car_geo_006/s_car_wheels_geo_006
+        weight: 1
+      - path: Car12
+        weight: 1
+      - path: Car12/s_car_geo_004
+        weight: 1
+      - path: Car12/s_car_geo_004/s_car_wheels_geo_004
+        weight: 1
+      - path: Car13
+        weight: 1
+      - path: Car13/s_car_geo_005
+        weight: 1
+      - path: Car13/s_car_geo_005/s_car_wheels_geo_005
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
