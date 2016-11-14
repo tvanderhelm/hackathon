@@ -76,19 +76,22 @@ public class CameraMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            transform.LookAt(stadium.transform.position);
-            moveTarget = new Vector3(0, 62, 223);
-            zoomFromField = true;
-
-            var anim = field.GetComponent<Animation>();
-            anim["Take 001"].speed = -1.0f;
-            if (!anim.isPlaying)
+            if (zoomed)
             {
-                anim["Take 001"].time = anim["Take 001"].clip.length;
+                transform.LookAt(stadium.transform.position);
+                moveTarget = new Vector3(0, 62, 223);
+                zoomFromField = true;
 
+                var anim = field.GetComponent<Animation>();
+                anim["Take 001"].speed = -1.0f;
+                if (!anim.isPlaying)
+                {
+                    anim["Take 001"].time = anim["Take 001"].clip.length;
+
+                }
+                anim.Play("Take 001");
+                fieldButton.ChangeButtonState(false);
             }
-            anim.Play("Take 001");
-            fieldButton.ChangeButtonState(false);
         }
         else
         {
@@ -115,6 +118,7 @@ public class CameraMovement : MonoBehaviour
         if (Lerp(zoomSmoothTime))
         {
             zoomToField = false;
+            zoomed = true;
             var anim = field.GetComponent<Animation>();
             anim["Take 001"].speed = 1.0f;
             anim.Play("Take 001");
