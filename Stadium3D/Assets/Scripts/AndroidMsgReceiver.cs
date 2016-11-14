@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MsgReceiver : MonoBehaviour
+public class AndroidMsgReceiver : MonoBehaviour
 {
 
     public void ReceiveMsg(string s)
