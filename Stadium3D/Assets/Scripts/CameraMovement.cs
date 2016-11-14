@@ -78,8 +78,14 @@ public class CameraMovement : MonoBehaviour
             zoomFromField = true;
 
             var anim = field.GetComponent<Animation>();
-            
-            //anim.Play("field_reverse");
+            anim["Take 001"].speed = -1.0f;
+            if (!anim.isPlaying)
+            {
+                anim["Take 001"].time = anim["Take 001"].clip.length;
+
+            }
+            anim.Play("Take 001");
+            fieldButton.ChangeButtonState(false);
         }
         else
         {
@@ -109,8 +115,9 @@ public class CameraMovement : MonoBehaviour
         {
             zoomToField = false;
             var anim = field.GetComponent<Animation>();
+            anim["Take 001"].speed = 1.0f;
             anim.Play("Take 001");
-            fieldButton.changeButtonState(true);
+            fieldButton.ChangeButtonState(true);
         }
         else
         {

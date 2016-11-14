@@ -9,6 +9,8 @@ public class LightsButton : MonoBehaviour
     public Light UpperLeftLight;
     public Light LowerLeftLight;
 
+    private bool showHalo = true;
+
     private void Start()
     {
         if (DateTime.Now.Hour > 18 || DateTime.Now.Hour < 7)
@@ -37,26 +39,61 @@ public class LightsButton : MonoBehaviour
         UpperLeftLight.enabled = !UpperLeftLight.enabled;
         LowerLeftLight.enabled = !LowerLeftLight.enabled;
 
-        ToggleHalo(UpperRightLight);
-        ToggleHalo(LowerRightLight);
-        ToggleHalo(UpperLeftLight);
-        ToggleHalo(LowerLeftLight);
+        if (showHalo)
+        {
+            ToggleHalo(UpperRightLight);
+            ToggleHalo(LowerRightLight);
+            ToggleHalo(UpperLeftLight);
+            ToggleHalo(LowerLeftLight);
+        }
     }
 
     /// <summary>
-    /// Toggle halo of one specific light. Can force the halo to be enabled.
+    /// Toggle halo of one specific light. Can force the halo to be enabled or disabled.
     /// </summary>
-    private void ToggleHalo(Light lightSource, bool forceEnable = false)
+    private void ToggleHalo(Light lightSource, bool force = false, bool forceState = true)
     {
         var halo = (Behaviour) lightSource.GetComponent("Halo");
 
-        if (forceEnable)
+        if (force)
         {
-            halo.enabled = true;
+            halo.enabled = forceState;
         }
         else
         {
             halo.enabled = !halo.enabled;
+        }
+    }
+
+    /// <summary>
+    /// Turn the halo's on or off if the stadium is upgraded.
+    /// </summary>
+    /// <param name="small"></param>
+    public void SwitchStadium(bool small)
+    {
+        if (small)
+        {
+            // Enable the halo's.
+            showHalo = true;
+
+            if (!Sun.enabled)
+            {
+                ToggleHalo(UpperRightLight, true);
+                ToggleHalo(LowerRightLight, true);
+                ToggleHalo(UpperLeftLight, true);
+                ToggleHalo(LowerLeftLight, true);
+            }
+            
+        }
+        else
+        {
+            // Turn all halo's off.
+            ToggleHalo(UpperRightLight, true, false);
+            ToggleHalo(LowerRightLight, true, false);
+            ToggleHalo(UpperLeftLight, true, false);
+            ToggleHalo(LowerLeftLight, true, false);
+
+            showHalo = false;
         }
     }
 }
