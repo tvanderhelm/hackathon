@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.ImageEffects;
 
 public class UpgradeStadium : MonoBehaviour
 {
 	public GameObject stadiumSmall;
 	public GameObject stadiumHuge;
+
     private LightsButton lightsScript;
 
     private void Start()
@@ -11,11 +13,10 @@ public class UpgradeStadium : MonoBehaviour
         lightsScript = GameObject.Find("AndroidMsgReceiver").GetComponent<LightsButton>();
     }
 
-	public void OnClick()
+    public void OnClick()
 	{
 	    if (stadiumSmall.activeSelf)
         {
-            lightsScript.SwitchStadium(false);
 	        var anim = stadiumSmall.GetComponent<Animation>();
 	        anim.Play("stadium_disappear");
 	    }
@@ -42,13 +43,7 @@ public class UpgradeStadium : MonoBehaviour
             var anim = stadiumSmall.GetComponent<Animation>();
             anim.Play("stadium_appear");
 	    }
-	}
-
-    public void AppearAnimationComplete(int phase)
-    {
-        if (stadiumSmall.activeSelf)
-        {
-            lightsScript.SwitchStadium(true);
-        }
+        lightsScript.SetDayNight();
     }
+
 }
