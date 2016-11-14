@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692546, g: 0.4967878, b: 0.5750865, a: 1}
+  m_IndirectSpecularColor: {r: 0.4469251, g: 0.4967873, b: 0.57508594, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1005,14 +1005,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textures:
-  - {fileID: 2800000, guid: 1bcab33568dcc4141a17a3f26ff76de2, type: 3}
-  - {fileID: 2800000, guid: a7ea58a5c63d62a4d97560ae7155f0fb, type: 3}
-  - {fileID: 2800000, guid: 9d2233e716ed0a74eaf4b94ca55b4e7b, type: 3}
-  - {fileID: 2800000, guid: 7739734579dd4ff44b0809638b252017, type: 3}
+  - {fileID: 2800000, guid: 5ebb32b835f740e44ac33bd8d01bf234, type: 3}
+  - {fileID: 2800000, guid: 7d92102d11fa3a74595bfdc2b46d65c7, type: 3}
+  - {fileID: 2800000, guid: a2c68c5be5495cc4cb2adb301a21d0c0, type: 3}
+  - {fileID: 2800000, guid: 9b4134cb807d14c4fa09d62fc32be689, type: 3}
+  - {fileID: 2800000, guid: baa8b5511cdce904182163b9eb5d9cf0, type: 3}
+  - {fileID: 2800000, guid: a64164c5fe19fb94d94c2785b9449ce8, type: 3}
+  - {fileID: 2800000, guid: 35bceb34da148a946bfafca36872350e, type: 3}
+  - {fileID: 2800000, guid: 91ad3332df7477247a3ddb6c4f1acd04, type: 3}
+  - {fileID: 2800000, guid: c43d361cb8c84e6429ef1cce94c9b784, type: 3}
+  - {fileID: 2800000, guid: e1fca1d08ff6ff34e81aaf388da75856, type: 3}
+  - {fileID: 2800000, guid: b3e25fb2d251bdd4983ef2faa580afcf, type: 3}
   currentTexture: 0
   renderer: {fileID: 0}
   child1: {fileID: 627728423}
-  child2: {fileID: 0}
+  child2: {fileID: 671866323}
 --- !u!1 &551057867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1287,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 1640019360
+  randomSeed: -1994522075
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -2995,7 +3002,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e9fe879e2f23d4e8f5209a7bf3668c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moving: 1
 --- !u!1001 &633892804
 Prefab:
   m_ObjectHideFlags: 0
@@ -3174,7 +3180,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -1902252475
+  randomSeed: 306459777
   InitialModule:
     serializedVersion: 2
     enabled: 1
