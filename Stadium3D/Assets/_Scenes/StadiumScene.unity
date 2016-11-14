@@ -860,7 +860,7 @@ MonoBehaviour:
   touchRotateMultiplier: 1
   zoomToFieldOfView: -1.5
   rotatingToStartMultiplier: 20
-  turningRate: 60
+  turningRate: 150
   lerpSpeed: 500
   shouldInvert: 0
   zoomToField: 0

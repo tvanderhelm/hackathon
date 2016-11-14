@@ -74,7 +74,7 @@ public class CameraMovement : MonoBehaviour
         {
             startTime = Time.time;
             transform.LookAt(stadium.transform.position);
-            lerpTarget = new Vector3(0, 62, 90);
+            lerpTarget = new Vector3(0, 62, 83);
             zoomFromField = true;
 
             var anim = field.GetComponent<Animation>();
@@ -99,7 +99,7 @@ public class CameraMovement : MonoBehaviour
     /// <returns></returns>
     private bool Lerp()
     {
-        var distCovered = ((Time.time - startTime) * lerpSpeed)/100;
+        var distCovered = (Time.time - startTime) * lerpSpeed/100;
         var fracJourney = distCovered / journeyLength;
         transform.position = Vector3.Slerp(transform.position, lerpTarget, fracJourney);
 
@@ -201,12 +201,12 @@ public class CameraMovement : MonoBehaviour
                 invert *= -1;
             }
         }
-        if (rotatingToStart && (transform.rotation.y > 0.89 && transform.rotation.y < 0.96))
+        if (rotatingToStart && transform.position.z > 82)
         {
             rotating = false;
             rotatingToStart = false;
 
-            lerpTarget = new Vector3(0, transform.position.y, transform.position.z);
+            lerpTarget = new Vector3(0, transform.position.y, 83);
             startTime = Time.time;
             journeyLength = Vector3.Distance(transform.position, lerpTarget);
 
@@ -214,6 +214,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
+            //Debug.Log(transform.rotation.y);
             transform.RotateAround(point, new Vector3(0.0f, invert * 1.0f, 0.0f), 20f * Time.deltaTime * rotateSpeed * rotateMultiplier);
         }
     }
