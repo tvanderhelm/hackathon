@@ -34,11 +34,9 @@ public class CameraMovement : MonoBehaviour
     public GameObject field;
 
     private Vector3 moveTarget;
-    private bool firstLerpStarted;
 
     private Vector3 velocity;
     public float zoomSmoothTime = 0.5f;
-    public float correctionSmoothTime = 0.1f;
 
     private readonly Quaternion originalRotatingTarget = new Quaternion(0f, 1f, -0.1f, 0f);
     private readonly Quaternion zoomedInRotatingTarget = new Quaternion(0f, 0.831f, -0.556f, 0f);
@@ -52,22 +50,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(transform.rotation.eulerAngles);
-        if (firstLerpStarted)
-        {
-            if (Lerp(correctionSmoothTime))
-            {
-                firstLerpStarted = false;
-                moveTarget = new Vector3(0, 150, 40);
-                zoomToField = true;
-                ToggleStadiumName(false);
-            }
-            else
-            {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, originalRotatingTarget, turningRate * Time.deltaTime);
-            }
-        }
-        else if (zoomToField)
+        if (zoomToField)
         {
             ZoomToField();
         }
@@ -213,9 +196,9 @@ public class CameraMovement : MonoBehaviour
             rotating = false;
             rotatingToStart = false;
 
-            moveTarget = new Vector3(0, transform.position.y, 222);
-
-            firstLerpStarted = true;
+            moveTarget = new Vector3(0, 110, 24);
+            zoomToField = true;
+            ToggleStadiumName(false);
         }
         else
         {
