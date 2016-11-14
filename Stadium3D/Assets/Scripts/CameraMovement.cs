@@ -40,7 +40,7 @@ public class CameraMovement : MonoBehaviour
     public float zoomSmoothTime = 0.5f;
     public float correctionSmoothTime = 0.1f;
 
-    private readonly Quaternion originalRotatingTarget = new Quaternion(0f, 0.98f, -0.2f, 0f);
+    private readonly Quaternion originalRotatingTarget = new Quaternion(0f, 1f, -0.1f, 0f);
     private readonly Quaternion zoomedInRotatingTarget = new Quaternion(0f, 0.831f, -0.556f, 0f);
 
     private void Start()
@@ -52,12 +52,13 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(transform.rotation.eulerAngles);
         if (firstLerpStarted)
         {
             if (Lerp(correctionSmoothTime))
             {
                 firstLerpStarted = false;
-                moveTarget = new Vector3(0, 110, 24);
+                moveTarget = new Vector3(0, 150, 40);
                 zoomToField = true;
                 ToggleStadiumName(false);
             }
@@ -79,7 +80,7 @@ public class CameraMovement : MonoBehaviour
             if (zoomed)
             {
                 transform.LookAt(stadium.transform.position);
-                moveTarget = new Vector3(0, 62, 223);
+                moveTarget = new Vector3(0, 30, 223);
                 zoomFromField = true;
 
                 var anim = field.GetComponent<Animation>();
