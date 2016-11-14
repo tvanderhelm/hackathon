@@ -38,6 +38,11 @@ ModelImporter:
     100060: s_stadium_light_geo_004
     100062: s_stadium_outsides_geo_001
     100064: //RootNode
+    100066: Box3942
+    100068: s_set_field_geo_001
+    100070: s_stadium_light_geo_001
+    100072: s_stadium_light_geo_002
+    100074: s_stadium_light_geo_003
     400000: Box2315
     400002: Cylinder034
     400004: Cylinder035
@@ -71,6 +76,11 @@ ModelImporter:
     400060: s_stadium_light_geo_004
     400062: s_stadium_outsides_geo_001
     400064: //RootNode
+    400066: Box3942
+    400068: s_set_field_geo_001
+    400070: s_stadium_light_geo_001
+    400072: s_stadium_light_geo_002
+    400074: s_stadium_light_geo_003
     2300000: Box2315
     2300002: Cylinder034
     2300004: Cylinder035
@@ -103,6 +113,11 @@ ModelImporter:
     2300058: s_stadium_geo_003
     2300060: s_stadium_light_geo_004
     2300062: s_stadium_outsides_geo_001
+    2300064: Box3942
+    2300066: s_set_field_geo_001
+    2300068: s_stadium_light_geo_001
+    2300070: s_stadium_light_geo_002
+    2300072: s_stadium_light_geo_003
     3300000: Box2315
     3300002: Cylinder034
     3300004: Cylinder035
@@ -135,6 +150,11 @@ ModelImporter:
     3300058: s_stadium_geo_003
     3300060: s_stadium_light_geo_004
     3300062: s_stadium_outsides_geo_001
+    3300064: Box3942
+    3300066: s_set_field_geo_001
+    3300068: s_stadium_light_geo_001
+    3300070: s_stadium_light_geo_002
+    3300072: s_stadium_light_geo_003
     4300000: s_001
     4300002: Plane013
     4300004: Cylinder034
@@ -167,6 +187,11 @@ ModelImporter:
     4300058: s_set_trashbin_geo_001
     4300060: s_stadium_outsides_geo_001
     4300062: s_stadium_geo_003
+    4300064: Box3942
+    4300066: s_stadium_light_geo_002
+    4300068: s_stadium_light_geo_001
+    4300070: s_stadium_light_geo_003
+    4300072: s_set_field_geo_001
   materials:
     importMaterials: 1
     materialName: 0
