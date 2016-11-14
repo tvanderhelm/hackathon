@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TextureChanger : MonoBehaviour {
+public class TextureChanger : MonoBehaviour
+{
     public Texture[] textures;
     public int currentTexture;
     public Renderer renderer;
@@ -11,52 +12,66 @@ public class TextureChanger : MonoBehaviour {
     private float startX;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         renderer = GetComponent<Renderer>();
         foreach (GameObject child in particleHolders)
         {
-            child.active = false;
-            startX = child.transform.position.x;
+            ParticleSystem emitter = child.GetComponent<ParticleSystem>();
+            emitter.Stop();
+            startX = 0;// child.transform.position.x;
         }
-        moveBy = new Vector3(-1.5f, 0, 0);
+        moveBy = new Vector3(-1.3f, 0, 0);
     }
+
+    /*
+    private IEnumerator CreateParticles() {
+
+    }
+    */
 
     private IEnumerator ChangeTextures()
     {
         foreach (GameObject child in particleHolders)
         {
-            child.active = true;
+            ParticleSystem emitter = child.GetComponent<ParticleSystem>();
+            // reset the position
+            child.transform.position = new Vector3(startX, child.transform.position.y, child.transform.position.z);
+            emitter.Play();
         }
-        while (currentTexture < textures.Length) {
+        while (currentTexture < textures.Length)
+        {
             renderer.material.mainTexture = textures[currentTexture];
             currentTexture++;
             //move the particles
             foreach (GameObject child in particleHolders)
             {
+                moveBy = -moveBy;
                 StartCoroutine(child.gameObject.GetComponent<particleMover>().Translation(child.gameObject.transform, moveBy, delay));
             }
-            
+
 
             yield return new WaitForSeconds(delay);
         }
         foreach (GameObject child in particleHolders)
         {
-            // reset the position
-            child.transform.position = new Vector3(child.transform.position.x + 1.5f* textures.Length, child.transform.position.y, child.transform.position.z);
-            child.active = false;
+            ParticleSystem emitter = child.GetComponent<ParticleSystem>();
+            emitter.Stop(false);
         }
         currentTexture = 0;
     }
 
-    public void StartUpgrade() {
+    public void StartUpgrade()
+    {
         StartCoroutine(ChangeTextures());
-        //child1Script.moving = true;
     }
 
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKey(KeyCode.Space)) {
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
             StartUpgrade();
         }
-	}
+    }
 }
