@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5080033, g: 0.6176878, b: 0.5990917, a: 1}
+  m_IndirectSpecularColor: {r: 0.50782126, g: 0.6173824, b: 0.5997553, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2300026, guid: 7f504736f3ff2b247b8e98683de9db0c, type: 3}
       propertyPath: m_ReceiveShadows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300050, guid: 7f504736f3ff2b247b8e98683de9db0c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -890,9 +890,9 @@ MonoBehaviour:
   radialBlurIterations: 2
   sunColor: {r: 0.99158216, g: 1, b: 0.3897059, a: 1}
   sunThreshold: {r: 1, g: 1, b: 0.40289795, a: 1}
-  sunShaftBlurRadius: 2.5
+  sunShaftBlurRadius: 2
   sunShaftIntensity: 2.15
-  maxRadius: 0.75
+  maxRadius: 0.708
   useDepthTexture: 1
   sunShaftsShader: {fileID: 4800000, guid: d3b1c8c1036784176946f5cfbfb7fe4c, type: 3}
   simpleClearShader: {fileID: 4800000, guid: f688f89ed5eb847c5b19c934a0f1e772, type: 3}
