@@ -6,29 +6,34 @@ public class TextureChanger : MonoBehaviour {
     public int currentTexture;
     public Renderer renderer;
     const float delay = 0.05f;
-    public GameObject child1;
-    public GameObject child2;
-    particleMover child1Script;
+    public GameObject[] particleHolders;
     private Vector3 moveBy;
 
     // Use this for initialization
     void Start () {
         renderer = GetComponent<Renderer>();
-        child1Script = child1.gameObject.GetComponent<particleMover>();
-        child1.active = false;
-        child2.active = false;
+        foreach (GameObject child in particleHolders)
+        {
+            child.active = false;
+        }
         moveBy = new Vector3(-1.5f, 0, 0);
     }
 
     private IEnumerator ChangeTextures()
     {
-        child1.active = true;
-        child2.active = true;
+        foreach (GameObject child in particleHolders)
+        {
+            child.active = true;
+        }
         while (currentTexture < textures.Length) {
             renderer.material.mainTexture = textures[currentTexture];
             currentTexture++;
             //move the particles
-            StartCoroutine(child1Script.Translation(child1.gameObject.transform, moveBy, delay));
+            foreach (GameObject child in particleHolders)
+            {
+                StartCoroutine(child.gameObject.GetComponent<particleMover>().Translation(child.gameObject.transform, moveBy, delay));
+            }
+            
 
             yield return new WaitForSeconds(delay);
         }
