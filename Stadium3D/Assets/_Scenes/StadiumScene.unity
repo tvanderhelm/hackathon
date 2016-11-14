@@ -510,7 +510,7 @@ Halo:
   m_Enabled: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4285855472
+    rgba: 4288479231
   m_Size: 4
 --- !u!108 &407019050
 Light:
@@ -521,8 +521,8 @@ Light:
   m_Enabled: 0
   serializedVersion: 7
   m_Type: 0
-  m_Color: {r: 1, g: 0.98600405, b: 0.49264705, a: 1}
-  m_Intensity: 2
+  m_Color: {r: 1, g: 1, b: 0.611808, a: 1}
+  m_Intensity: 8
   m_Range: 70
   m_SpotAngle: 80
   m_CookieSize: 10
@@ -4997,6 +4997,8 @@ MonoBehaviour:
   LowerRightLight: {fileID: 1660840807}
   UpperLeftLight: {fileID: 1481806546}
   LowerLeftLight: {fileID: 1988506964}
+  NightSkybox: {fileID: 2100000, guid: c12b20248bf578847885e0b1e75a0387, type: 2}
+  DaySkybox: {fileID: 2100000, guid: d9d73c9293e8c664a8eb7f4cb05477a8, type: 2}
 --- !u!114 &692112591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5721,7 +5723,7 @@ Halo:
   m_Enabled: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4285855472
+    rgba: 4288479231
   m_Size: 4
 --- !u!108 &1481806546
 Light:
@@ -5732,8 +5734,8 @@ Light:
   m_Enabled: 0
   serializedVersion: 7
   m_Type: 0
-  m_Color: {r: 1, g: 0.98600405, b: 0.49264705, a: 1}
-  m_Intensity: 2
+  m_Color: {r: 1, g: 1, b: 0.611808, a: 1}
+  m_Intensity: 8
   m_Range: 70
   m_SpotAngle: 80
   m_CookieSize: 10
@@ -5899,7 +5901,7 @@ Halo:
   m_Enabled: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4285855472
+    rgba: 4288479231
   m_Size: 4
 --- !u!108 &1660840807
 Light:
@@ -5910,8 +5912,8 @@ Light:
   m_Enabled: 0
   serializedVersion: 7
   m_Type: 0
-  m_Color: {r: 1, g: 0.98600405, b: 0.49264705, a: 1}
-  m_Intensity: 2
+  m_Color: {r: 1, g: 1, b: 0.611808, a: 1}
+  m_Intensity: 8
   m_Range: 90
   m_SpotAngle: 80
   m_CookieSize: 10
@@ -6088,7 +6090,7 @@ Halo:
   m_Enabled: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4285855472
+    rgba: 4288479231
   m_Size: 4
 --- !u!108 &1988506964
 Light:
@@ -6099,8 +6101,8 @@ Light:
   m_Enabled: 0
   serializedVersion: 7
   m_Type: 0
-  m_Color: {r: 1, g: 0.98600405, b: 0.49264705, a: 1}
-  m_Intensity: 2
+  m_Color: {r: 1, g: 1, b: 0.611808, a: 1}
+  m_Intensity: 8
   m_Range: 90
   m_SpotAngle: 80
   m_CookieSize: 10
