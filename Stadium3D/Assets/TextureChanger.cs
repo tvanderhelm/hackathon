@@ -7,16 +7,21 @@ public class TextureChanger : MonoBehaviour {
     public Renderer renderer;
     const float delay = 0.15f;
     public GameObject child1;
+    public GameObject child2;
     particleMover child1Script;
 
     // Use this for initialization
     void Start () {
         renderer = GetComponent<Renderer>();
         child1Script = child1.gameObject.GetComponent<particleMover>();
+        child1.active = false;
+        child2.active = false;
     }
 
     private IEnumerator ChangeTextures()
     {
+        child1.active = true;
+        child2.active = true;
         while (currentTexture < textures.Length) {
             renderer.material.mainTexture = textures[currentTexture];
             currentTexture++;
