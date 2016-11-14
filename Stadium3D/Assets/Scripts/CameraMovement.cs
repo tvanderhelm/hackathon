@@ -59,6 +59,7 @@ public class CameraMovement : MonoBehaviour
                 firstLerpStarted = false;
                 startTime = Time.time;
                 lerpTarget = new Vector3(0, 110, 24);
+                journeyLength = Vector3.Distance(transform.position, lerpTarget);
                 zoomToField = true;
                 ToggleStadiumName(false);
             }
@@ -79,7 +80,8 @@ public class CameraMovement : MonoBehaviour
         {
             startTime = Time.time;
             transform.LookAt(stadium.transform.position);
-            lerpTarget = new Vector3(0, 62, 83);
+            lerpTarget = new Vector3(0, 62, 223);
+            journeyLength = Vector3.Distance(transform.position, lerpTarget);
             zoomFromField = true;
 
             var anim = field.GetComponent<Animation>();
@@ -207,12 +209,12 @@ public class CameraMovement : MonoBehaviour
                 invert *= -1;
             }
         }
-        if (rotatingToStart && transform.position.z > 82)
+        if (rotatingToStart && transform.position.z > 222)
         {
             rotating = false;
             rotatingToStart = false;
 
-            lerpTarget = new Vector3(0, transform.position.y, 83);
+            lerpTarget = new Vector3(0, transform.position.y, 223);
             startTime = Time.time;
             journeyLength = Vector3.Distance(transform.position, lerpTarget);
 
