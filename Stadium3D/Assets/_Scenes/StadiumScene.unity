@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4469251, g: 0.4967873, b: 0.57508594, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692546, g: 0.4967878, b: 0.5750865, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -834,10 +834,7 @@ Transform:
   m_LocalPosition: {x: -142.9, y: 167, z: 171.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 39.996002, y: 141.619, z: 0}
-  m_Children:
-  - {fileID: 1378645067}
-  - {fileID: 1324104636}
-  - {fileID: 551057870}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &500773724
@@ -1031,6 +1028,7 @@ GameObject:
   - 4: {fileID: 551057870}
   - 23: {fileID: 551057869}
   - 102: {fileID: 551057868}
+  - 114: {fileID: 551057871}
   m_Layer: 0
   m_Name: Stadium Location
   m_TagString: Untagged
@@ -1094,13 +1092,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551057867}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 45, z: 232}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.3090171, z: 0, w: 0.95105654}
+  m_LocalPosition: {x: 0, y: 60, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: -36, z: 0}
   m_Children: []
-  m_Father: {fileID: 500773723}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+--- !u!114 &551057871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 551057867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a0b8e11b34f454d8387789e55a5bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &561516625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,6 +5492,7 @@ GameObject:
   - 4: {fileID: 1324104636}
   - 23: {fileID: 1324104635}
   - 102: {fileID: 1324104634}
+  - 114: {fileID: 1324104637}
   m_Layer: 0
   m_Name: Stadium Name
   m_TagString: Untagged
@@ -5546,13 +5556,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1324104633}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 52, z: 232}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.3090171, z: 0, w: 0.95105654}
+  m_LocalPosition: {x: 0, y: 65, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: -36, z: 0}
   m_Children: []
-  m_Father: {fileID: 500773723}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+--- !u!114 &1324104637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324104633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a0b8e11b34f454d8387789e55a5bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1378645065
 GameObject:
   m_ObjectHideFlags: 0
@@ -5617,13 +5638,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1378645065}
-  m_LocalRotation: {x: -0.11166725, y: -0.88819706, z: 0.32327738, w: 0.3068032}
+  m_LocalRotation: {x: -0, y: -0, z: 0.000000007450581, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 500773723}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &1481806543
 GameObject:
   m_ObjectHideFlags: 0
