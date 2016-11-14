@@ -865,6 +865,9 @@ MonoBehaviour:
   shouldInvert: 0
   zoomToField: 0
   zoomFromField: 0
+  Line: {fileID: 1378645066}
+  StadiumName: {fileID: 1324104635}
+  StadiumLocation: {fileID: 551057869}
   fieldButton: {fileID: 1997033430}
   stadium: {fileID: 1596295820}
   cameraComponent: {fileID: 0}

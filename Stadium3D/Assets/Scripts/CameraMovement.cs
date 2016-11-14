@@ -22,6 +22,10 @@ public class CameraMovement : MonoBehaviour
     public bool zoomToField;
     public bool zoomFromField;
     private bool zoomed;
+
+    public LineRenderer Line;
+    public MeshRenderer StadiumName;
+    public MeshRenderer StadiumLocation;
     public FieldButton fieldButton;
     private Vector3 point;
 
@@ -56,6 +60,7 @@ public class CameraMovement : MonoBehaviour
                 startTime = Time.time;
                 lerpTarget = new Vector3(0, 110, 24);
                 zoomToField = true;
+                ToggleStadiumName(false);
             }
             else
             {
@@ -146,6 +151,7 @@ public class CameraMovement : MonoBehaviour
             zoomFromField = false;
             zoomed = false;
             rotating = true;
+            ToggleStadiumName(true);
         }
         else
         {
@@ -245,5 +251,12 @@ public class CameraMovement : MonoBehaviour
             cameraComponent.fieldOfView += deltaMagnitudeDiff * perspectiveZoomSpeed;
             cameraComponent.fieldOfView = Mathf.Clamp(cameraComponent.fieldOfView, minZoomLevel, maxZoomLevel);
         }
+    }
+
+    public void ToggleStadiumName(bool enabled)
+    {
+        Line.enabled = enabled;
+        StadiumName.enabled = enabled;
+        StadiumLocation.enabled = enabled;
     }
 }
