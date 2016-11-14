@@ -5,10 +5,11 @@ public class TextureChanger : MonoBehaviour {
     public Texture[] textures;
     public int currentTexture;
     public Renderer renderer;
-    const float delay = 0.15f;
+    const float delay = 0.05f;
     public GameObject child1;
     public GameObject child2;
     particleMover child1Script;
+    private Vector3 moveBy;
 
     // Use this for initialization
     void Start () {
@@ -16,6 +17,7 @@ public class TextureChanger : MonoBehaviour {
         child1Script = child1.gameObject.GetComponent<particleMover>();
         child1.active = false;
         child2.active = false;
+        moveBy = new Vector3(-1.5f, 0, 0);
     }
 
     private IEnumerator ChangeTextures()
@@ -26,7 +28,7 @@ public class TextureChanger : MonoBehaviour {
             renderer.material.mainTexture = textures[currentTexture];
             currentTexture++;
             //move the particles
-            //StartCoroutine(child1Script.Translation(gameObject.transform, Vector3.left, 0.5f));
+            StartCoroutine(child1Script.Translation(child1.gameObject.transform, moveBy, delay));
 
             yield return new WaitForSeconds(delay);
         }
@@ -35,7 +37,7 @@ public class TextureChanger : MonoBehaviour {
 
     public void StartUpgrade() {
         StartCoroutine(ChangeTextures());
-        child1Script.moving = true;
+        //child1Script.moving = true;
     }
 
 	// Update is called once per frame

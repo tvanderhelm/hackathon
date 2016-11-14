@@ -3,7 +3,7 @@ using System.Collections;
 
 public class particleMover : MonoBehaviour {
     Vector3 startPoint, endPoint;
-    public bool moving;
+
     // Use this for initialization
     void Start () {
         startPoint = transform.position;
@@ -34,10 +34,6 @@ public class particleMover : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (moving)
-        {
-            StartCoroutine(Translation(gameObject.transform, Vector3.left, 0.5f));
-            moving = false;
-        }
+
     }
 }
