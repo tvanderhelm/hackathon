@@ -50,9 +50,9 @@
      <Compile Include="Assets\Scripts\FieldButton.cs" />
      <Compile Include="Assets\Scripts\LightsButton.cs" />
      <Compile Include="Assets\Scripts\TextFollowCamera.cs" />
+     <Compile Include="Assets\Scripts\TextureChanger.cs" />
      <Compile Include="Assets\Scripts\UpgradeStadium.cs" />
-     <Compile Include="Assets\TextureChanger.cs" />
-     <Compile Include="Assets\particleMover.cs" />
+     <Compile Include="Assets\Scripts\particleMover.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

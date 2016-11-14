@@ -1325,7 +1325,7 @@ MonoBehaviour:
   touchRotateMultiplier: 1
   zoomToFieldOfView: -1.5
   rotatingToStartMultiplier: 10
-  turningRate: 30
+  turningRate: 60
   shouldInvert: 0
   zoomToField: 0
   zoomFromField: 0
@@ -1337,7 +1337,6 @@ MonoBehaviour:
   cameraComponent: {fileID: 0}
   field: {fileID: 547082934}
   zoomSmoothTime: 0.5
-  correctionSmoothTime: 0.1
 --- !u!114 &500773725
 MonoBehaviour:
   m_ObjectHideFlags: 0

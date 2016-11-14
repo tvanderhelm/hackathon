@@ -38,7 +38,7 @@ public class CameraMovement : MonoBehaviour
     private Vector3 velocity;
     public float zoomSmoothTime = 0.5f;
 
-    private readonly Quaternion originalRotatingTarget = new Quaternion(0f, 1f, -0.1f, 0f);
+    private readonly Quaternion originalRotatingTarget = new Quaternion(0.00376f, 0.99617f, -0.067f, 0.0562f);
     private readonly Quaternion zoomedInRotatingTarget = new Quaternion(0f, 0.831f, -0.556f, 0f);
 
     private void Start()
@@ -196,13 +196,12 @@ public class CameraMovement : MonoBehaviour
             rotating = false;
             rotatingToStart = false;
 
-            moveTarget = new Vector3(0, 110, 24);
+            moveTarget = new Vector3(0, 150, 40);
             zoomToField = true;
             ToggleStadiumName(false);
         }
         else
         {
-            //Debug.Log(transform.rotation.y);
             transform.RotateAround(point, new Vector3(0.0f, invert * 1.0f, 0.0f), 20f * Time.deltaTime * rotateSpeed * rotateMultiplier);
         }
     }
