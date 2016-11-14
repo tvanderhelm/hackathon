@@ -14,21 +14,17 @@ public class TextureChanger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        startX = 0;
         renderer = GetComponent<Renderer>();
         foreach (GameObject child in particleHolders)
         {
             ParticleSystem emitter = child.GetComponent<ParticleSystem>();
             emitter.Stop();
-            startX = 0;// child.transform.position.x;
         }
         moveBy = new Vector3(-1.3f, 0, 0);
+        renderer.material.mainTexture = textures[0];
     }
 
-    /*
-    private IEnumerator CreateParticles() {
-
-    }
-    */
 
     private IEnumerator ChangeTextures()
     {
