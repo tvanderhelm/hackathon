@@ -1,19 +1,26 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UpgradeStadium : MonoBehaviour
 {
-
 	public GameObject stadiumSmall;
 	public GameObject stadiumHuge;
+    private LightsButton lightsScript;
+
+    private void Start()
+    {
+        lightsScript = GameObject.Find("Lights Button").GetComponent<LightsButton>();
+    }
 
 	public void OnClick()
 	{
 	    if (stadiumSmall.activeSelf)
-	    {
+        {
+            lightsScript.SwitchStadium(false);
 	        var anim = stadiumSmall.GetComponent<Animation>();
 	        anim.Play("stadium_disappear");
-	    } else {
+	    }
+        else
+        {
             var anim = stadiumHuge.GetComponent<Animation>();
             anim.Play("stadium_disappear");
         }
@@ -27,12 +34,21 @@ public class UpgradeStadium : MonoBehaviour
             stadiumHuge.SetActive(true);
             var anim = stadiumHuge.GetComponent<Animation>();
             anim.Play("stadium_appear");
-	    } else {
+	    }
+        else
+        {
             stadiumHuge.SetActive(false);
             stadiumSmall.SetActive(true);
             var anim = stadiumSmall.GetComponent<Animation>();
             anim.Play("stadium_appear");
 	    }
-		
 	}
+
+    public void AppearAnimationComplete(int phase)
+    {
+        if (stadiumSmall.activeSelf)
+        {
+            lightsScript.SwitchStadium(true);
+        }
+    }
 }

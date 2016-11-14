@@ -868,7 +868,7 @@ MonoBehaviour:
   fieldButton: {fileID: 1997033430}
   stadium: {fileID: 1596295820}
   cameraComponent: {fileID: 0}
-  fieldAnimation: {fileID: 0}
+  field: {fileID: 547082934}
 --- !u!114 &500773725
 MonoBehaviour:
   m_ObjectHideFlags: 0

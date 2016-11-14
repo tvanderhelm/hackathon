@@ -3,7 +3,8 @@
 public class FieldButton : MonoBehaviour
 {
     public TextureChanger textureChanger; 
-    private bool zoomed = false;
+    private bool zoomed;
+
     public void OnClick()
     {
         var mainCamera = Camera.main;
@@ -20,13 +21,12 @@ public class FieldButton : MonoBehaviour
         }
         else {
             // Change the background textures
-           // var textureChanger = gameObject.GetComponent<TextureChanger>();
             textureChanger.StartUpgrade();
         }
     }
 
-    public void changeButtonState(bool zoomed) {
+    public void ChangeButtonState(bool zoomed)
+    {
         this.zoomed = zoomed;
     }
- 
 }
