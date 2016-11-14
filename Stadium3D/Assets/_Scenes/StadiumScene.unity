@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5080033, g: 0.6176878, b: 0.5990917, a: 1}
+  m_IndirectSpecularColor: {r: 0.50782126, g: 0.6173824, b: 0.5997553, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1283,8 +1283,7 @@ MonoBehaviour:
   touchRotateMultiplier: 1
   zoomToFieldOfView: -1.5
   rotatingToStartMultiplier: 10
-  turningRate: 15
-  lerpSpeed: 500
+  turningRate: 30
   shouldInvert: 0
   zoomToField: 0
   zoomFromField: 0
@@ -1295,6 +1294,8 @@ MonoBehaviour:
   stadium: {fileID: 1596295820}
   cameraComponent: {fileID: 0}
   field: {fileID: 547082934}
+  zoomSmoothTime: 0.5
+  correctionSmoothTime: 0.1
 --- !u!114 &500773725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5589,6 +5590,8 @@ MonoBehaviour:
   LowerRightLight: {fileID: 1660840807}
   UpperLeftLight: {fileID: 1481806546}
   LowerLeftLight: {fileID: 1988506964}
+  bigLights: []
+  bigHalo: []
   NightSkybox: {fileID: 2100000, guid: c12b20248bf578847885e0b1e75a0387, type: 2}
   DaySkybox: {fileID: 2100000, guid: d9d73c9293e8c664a8eb7f4cb05477a8, type: 2}
 --- !u!114 &692112591
