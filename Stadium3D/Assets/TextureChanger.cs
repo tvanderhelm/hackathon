@@ -5,7 +5,7 @@ public class TextureChanger : MonoBehaviour {
     public Texture[] textures;
     public int currentTexture;
     public Renderer renderer;
-    const float delay = 0.10f;
+    const float delay = 0.05f;
     public GameObject child1;
     public GameObject child2;
     particleMover child1Script;
