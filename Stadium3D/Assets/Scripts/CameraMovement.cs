@@ -48,6 +48,10 @@ public class CameraMovement : MonoBehaviour
         transform.LookAt(point);
     }
 
+    public bool isZoomed() {
+        return zoomed;        
+    }
+
     private void Update()
     {
         if (zoomToField)

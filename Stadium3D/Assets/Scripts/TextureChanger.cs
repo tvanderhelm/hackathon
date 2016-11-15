@@ -10,10 +10,13 @@ public class TextureChanger : MonoBehaviour
     public GameObject[] particleHolders;
     private Vector3 moveBy;
     private float startX;
+    Animation animation;
 
     // Use this for initialization
     void Start()
     {
+        
+        animation = GetComponent<Animation>();
         startX = 0;
         renderer = GetComponent<Renderer>();
         foreach (GameObject child in particleHolders)
@@ -21,6 +24,7 @@ public class TextureChanger : MonoBehaviour
             ParticleSystem emitter = child.GetComponent<ParticleSystem>();
             emitter.Stop();
         }
+
         moveBy = new Vector3(-1.3f, 0, 0);
         renderer.material.mainTexture = textures[0];
     }
@@ -59,15 +63,14 @@ public class TextureChanger : MonoBehaviour
 
     public void StartUpgrade()
     {
-        StartCoroutine(ChangeTextures());
+        var cameraScript = Camera.main.GetComponent<CameraMovement>();
+        if (cameraScript.isZoomed() && !animation.isPlaying)
+            StartCoroutine(ChangeTextures());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            StartUpgrade();
-        }
+
     }
 }
