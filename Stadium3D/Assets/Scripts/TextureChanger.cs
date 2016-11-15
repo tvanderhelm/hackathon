@@ -26,7 +26,7 @@ public class TextureChanger : MonoBehaviour
         }
 
         moveBy = new Vector3(-1.3f, 0, 0);
-        renderer.material.mainTexture = textures[0];
+        initField();
     }
 
 
@@ -66,6 +66,11 @@ public class TextureChanger : MonoBehaviour
         var cameraScript = Camera.main.GetComponent<CameraMovement>();
         if (cameraScript.isZoomed() && !animation.isPlaying)
             StartCoroutine(ChangeTextures());
+    }
+
+    public void initField()
+    {
+        renderer.material.mainTexture = textures[0];
     }
 
     // Update is called once per frame

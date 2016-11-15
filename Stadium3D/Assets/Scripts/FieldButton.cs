@@ -16,6 +16,8 @@ public class FieldButton : MonoBehaviour
 
             if (mainCamera.transform.position.x > 0)
                 cameraScript.shouldInvert = true;
+
+            textureChanger.initField();
         }
         else
         {
