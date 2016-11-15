@@ -77,8 +77,10 @@ public class CameraMovement : MonoBehaviour
                     anim["Take 001"].time = anim["Take 001"].clip.length;
 
                 }
+                
                 anim.Play("Take 001");
                 fieldButton.ChangeButtonState(false);
+                
             }
         }
         else
@@ -139,6 +141,7 @@ public class CameraMovement : MonoBehaviour
             zoomFromField = false;
             zoomed = false;
             rotating = true;
+            field.transform.position = new Vector3(0, 1.6f, 0);
             ToggleStadiumName(true);
         }
         else
