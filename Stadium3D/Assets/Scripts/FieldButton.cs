@@ -15,11 +15,10 @@ public class FieldButton : MonoBehaviour
             cameraScript.rotatingToStart = true;
 
             if (mainCamera.transform.position.x > 0)
-            {
                 cameraScript.shouldInvert = true;
-            }
         }
-        else {
+        else
+        {
             // Change the background textures
             textureChanger.StartUpgrade();
         }

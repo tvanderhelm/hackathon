@@ -9,21 +9,16 @@ public class LightsButton : MonoBehaviour
     public Light UpperLeftLight;
     public Light LowerLeftLight;
 
-    public Light[] bigLights;
-    public Behaviour[] bigHalo;
     public Material NightSkybox;
     public Material DaySkybox;
 
-    private int currentLight;
-    private Color dayFogColor = new Color(0.612f, 0.69f, 0.337f, 1f);
-    private Color nightFogColor = new Color(0.255f, 0.35f, 0.224f, 1f);
+    private readonly Color _dayFogColor = new Color(0.612f, 0.69f, 0.337f, 1f);
+    private readonly Color _nightFogColor = new Color(0.255f, 0.35f, 0.224f, 1f);
 
     private void Start()
     {
         if (DateTime.Now.Hour > 18 || DateTime.Now.Hour < 7)
-        {
             SetDayNight(true);
-        }
     }
 
     /// <summary>
@@ -36,7 +31,8 @@ public class LightsButton : MonoBehaviour
 
     public void SetDayNight(bool toggle = false)
     {
-        if (toggle) Sun.enabled = !Sun.enabled;
+        if (toggle)
+            Sun.enabled = !Sun.enabled;
 
         SetBigLights();
         SetSmallLights();
@@ -50,10 +46,12 @@ public class LightsButton : MonoBehaviour
         if (Sun.enabled)
         {
             RenderSettings.skybox = DaySkybox;
-            RenderSettings.fogColor = dayFogColor;
-        } else {
+            RenderSettings.fogColor = _dayFogColor;
+        }
+        else
+        {
             RenderSettings.skybox = NightSkybox;
-            RenderSettings.fogColor = nightFogColor;
+            RenderSettings.fogColor = _nightFogColor;
         }
     }
 
@@ -62,10 +60,12 @@ public class LightsButton : MonoBehaviour
         if (GameObject.Find("stadium_small") != null)
         {
             var onOff = !Sun.enabled;
+
             UpperRightLight.enabled = onOff;
             LowerRightLight.enabled = onOff;
             UpperLeftLight.enabled = onOff;
             LowerLeftLight.enabled = onOff;
+
             SetHalo(UpperRightLight);
             SetHalo(LowerRightLight);
             SetHalo(UpperLeftLight);
@@ -97,5 +97,4 @@ public class LightsButton : MonoBehaviour
             }
         }
     }
-
 }
