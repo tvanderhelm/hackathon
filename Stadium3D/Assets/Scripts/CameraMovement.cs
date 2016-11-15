@@ -69,6 +69,7 @@ public class CameraMovement : MonoBehaviour
                 transform.LookAt(stadium.transform.position);
                 moveTarget = new Vector3(0, 30, 223);
                 zoomFromField = true;
+                zoomed = false;
 
                 var anim = field.GetComponent<Animation>();
                 anim["Take 001"].speed = -1.0f;
@@ -139,7 +140,6 @@ public class CameraMovement : MonoBehaviour
         if (Lerp(zoomSmoothTime))
         {
             zoomFromField = false;
-            zoomed = false;
             rotating = true;
             field.transform.position = new Vector3(0, 1.6f, 0);
             ToggleStadiumName(true);
